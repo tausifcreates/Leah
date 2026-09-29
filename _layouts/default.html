@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <style>
+      .site-title a { display: inline-flex; align-items: center; gap: 0.35em; color: inherit; text-decoration: none; }
+      .site-title img { height: 1.3em; width: auto; }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <h1 class="site-title"><a href="{{ "/" | relative_url }}"><img src="{{ "/logo.png" | relative_url }}" alt="">{{ site.title | default: site.github.repository_name }}</a></h1>
+
+      {{ content }}
+    </div>
+  </body>
+</html>
