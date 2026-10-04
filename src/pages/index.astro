@@ -1,0 +1,163 @@
+---
+// From IINA's website (source/localizable/index.html.slim); see LICENSE-IINA.
+import Layout from "../layouts/Layout.astro";
+import { site, url } from "../site";
+
+const latest = site.latest;
+---
+
+<Layout title="Leah - The modern media player for macOS" htmlClass="index">
+  <section class="title">
+    <div class="background">
+      <svg width="100%" height="100%" viewBox="0 0 1200 800">
+        <circle cx="100" cy="120" r="500" fill="#42b0ff" fill-opacity="0.05"></circle>
+        <circle cx="900" cy="620" r="140" fill="#ff4294" fill-opacity="0.05"></circle>
+        <circle cx="360" cy="840" r="360" fill="#ff9142" fill-opacity="0.05"></circle>
+        <circle cx="1000" cy="180" r="180" fill="#42ff91" fill-opacity="0.05"></circle>
+      </svg>
+    </div>
+    <div class="container position-relative">
+      <div class="sample-image">
+        <img src={url("/images/shot-hero.webp")} alt="Screenshot" />
+      </div>
+      <div class="small-headline">/ˈliːə/</div>
+      <h1 class="headline">Leah</h1>
+      <p class="sub-headline">The&nbsp;<span class="modern">modern</span>&nbsp;media player for macOS.</p>
+
+      <div class="plugin-pr">
+        <div class="plugin-pr-content">
+          <h6><span class="fas fa-cube"></span>Now with the plugin system</h6>
+          <div class="plugin-pr-links">
+            <a class="pr-link" href="#"><span class="fas fa-angle-right"></span>Learn more</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="download">
+        <a class="dl-btn github" href="#"><span class="fab fa-github"></span>&nbsp;GitHub<span class="light">GPLv3</span></a>
+        <a class="dl-btn dmg" href={site.appStoreUrl}><span class="fas fa-cloud-download-alt"></span>&nbsp;Download<span class="light">v{latest.version}</span></a>
+      </div>
+      <p class="requirement">Requires {latest.system_arm} for Apple Sillicon Macs, and {latest.system_x86} for Intel Macs</p>
+      <p class="other-downloads"><a href="#">Download beta releases or nightly builds</a></p>
+    </div>
+  </section>
+
+  <section class="highlight highlight--macos">
+    <div class="container">
+      <h2>For and only for modern macOS.</h2>
+      <p>
+        Leah is born to be a modern macOS application, from its framework to the user interface. It adopts the
+        post-Yosemite design language of macOS and keeps up the pace of new technologies like Force Touch, Touch Bar, and
+        Picture-in-Picture.
+      </p>
+      <div class="highlight-features">
+        <div class="item item--forcetouch">
+          <div class="left">
+            <div class="decoration-line"></div>
+            <div class="item-name bg-1">Dark Mode</div>
+            <div class="item-desc">
+              Leah ships with a carefully crafted user interface for the macOS Mojave dark mode, which includes adjusted
+              colors, icons and textures, providing a sleek and unified look.
+            </div>
+          </div>
+          <div class="right">
+            <div class="item-img"><img src={url("/images/shot-scrub.webp")} width="800" /></div>
+          </div>
+        </div>
+        <div class="item item--pip reversed">
+          <div class="right">
+            <div class="decoration-line"></div>
+            <div class="item-name bg-3">Picture-in-Picture</div>
+            <div class="item-desc">
+              Leah supports the native Picture-in-Picture mode, enables you to enjoy either local or online videos without
+              being distracted.
+            </div>
+          </div>
+          <div class="left">
+            <div class="item-img"><img src={url("/images/shot-watch.webp")} width="800" /></div>
+          </div>
+        </div>
+        <div class="more-features">
+          <h4>More Features</h4>
+          <div class="features">
+            <div class="left bg-large-l">
+              Touch Bar<br />System Media Control<br />Customizable UI<br />Online Subtitles
+            </div>
+            <div class="right bg-large-r">
+              Music Mode<br />Mouse &amp; Trackpad Gestures<br />Thumbnail Preview<br />Plugin System
+            </div>
+          </div>
+          <a class="highlight-link" href="#">
+            <div>Screenshots</div>
+            <div class="comming-soon">Coming soon</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight highlight--playback">
+    <div class="background">
+      <svg width="100%" height="100%" viewBox="0 0 1200 800">
+        <circle cx="150" cy="200" r="120" fill="#99e1d0" fill-opacity="0.03"></circle>
+        <circle cx="450" cy="700" r="180" fill="#99e1d0" fill-opacity="0.03"></circle>
+        <circle cx="1100" cy="80" r="500" fill="#42b0ff" fill-opacity="0.05"></circle>
+        <g transform="translate(1100,120)">
+          <path d="M-150,220 L-150,-220 L300,0 z" fill="#fff" fill-opacity="0.03"></path>
+        </g>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="content">
+        <h2>Plays anything.</h2>
+        <p>
+          Powered by the open source media player mpv, Leah can play almost every media file you have. With the support of
+          youtube-dl and our browser extensions, you can also play a variety of online streams in Leah via one click.
+        </p>
+      </div>
+      <div class="items mb-4">
+        <div class="item">
+          <div class="item-icon"><span class="fas fa-file-video fa-2x m-0"></span></div>
+          <div class="item-text">Local files</div>
+        </div>
+        <div class="item">
+          <div class="item-icon"><span class="fas fa-globe-americas fa-2x m-0"></span></div>
+          <div class="item-text">Online streams</div>
+        </div>
+        <div class="item">
+          <div class="item-icon"><span class="fab fa-youtube fa-2x m-0"></span></div>
+          <div class="item-text">YouTube playlists</div>
+        </div>
+      </div>
+      <div class="content">
+        <a href="#">Download browser extensions<span class="fas fa-angle-right ml-2"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlight highlight--opensource">
+    <div class="container">
+      <div class="swift-bg"><img src={url("/images/swift.svg")} /></div>
+      <div class="content">
+        <h2>Free, open source, in active development.</h2>
+        <div class="row">
+          <div class="col-sm">
+            <p>
+              Written in the Swift programming language, Leah is free and open-sourced under the GPLv3 license. Please feel
+              free to contribute to it by opening an issue, sending a feature request or a bug report on GitHub or by
+              email.
+            </p>
+            <a class="highlight-link" href="#"><span class="fab fa-github"></span><span class="mr-2">GitHub repository</span><span class="fa fa-angle-right"></span></a>
+          </div>
+          <div class="col-sm">
+            <p>
+              Leah has been translated into more than 20 languages by translators from all over the world. You can improve
+              the translation or add your new language freely via our translation platform<small> (powered by Crowdin)</small>.
+            </p>
+            <a class="highlight-link" href="#" target="_blank"><span class="fas fa-globe"></span><span class="mr-2">Translation platform</span><span class="fa fa-angle-right"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

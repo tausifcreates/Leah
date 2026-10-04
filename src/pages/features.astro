@@ -1,0 +1,100 @@
+---
+// From IINA's website (source/localizable/features.html.slim); see LICENSE-IINA.
+import Layout from "../layouts/Layout.astro";
+import { url } from "../site";
+---
+
+<Layout title="Features | Leah - The modern media player for macOS" htmlClass="features">
+  <section class="nav">
+    <div class="container">
+      <div class="nav-container">
+        <h2>Features</h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="features-container">
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img"><img src={url("/images/shot-scrub.webp")} alt="Sidebar" /></div>
+            <h4>Access all you need from the sidebar.</h4>
+            <p>All settings and options are available in the sidebar so you can adjust them in an intuitive way.</p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img"><img src={url("/images/shot-preview.webp")} alt="Control" /></div>
+            <h4>Make full use of your mouse and trackpad.</h4>
+            <p>Leah allows you to assign actions for mouse scrolling and click events, trackpad gestures or even Force Touch clicks.</p>
+          </div>
+        </div>
+        <div class="feature-block full">
+          <div class="feature-content">
+            <h4>Highly customizable user interface.</h4>
+            <p>Leah provides 2 themes that match the system and 3 different layouts for the control bar.</p>
+            <div class="segment-control toggle-dark">
+              <div class="segment active" data-choice="light">Light + Top</div>
+              <div class="segment" data-choice="dark">Dark + Floating</div>
+            </div>
+            <div class="content light">
+              <div class="feature-img"><img src={url("/images/shot-play.webp")} alt="Light + Top" /></div>
+            </div>
+            <div class="content dark">
+              <div class="feature-img"><img src={url("/images/shot-watch.webp")} alt="Dark + Floating" /></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img"><img src={url("/images/shot-open.webp")} alt="Touch Bar" /></div>
+            <h4>Touch Bar support.</h4>
+            <p>Advanced Touch Bar support including a QuickTime-like seek preview.</p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img"><img src={url("/images/shot-hero.webp")} alt="Picture-in-Picture" /></div>
+            <h4>Picture-in-Picture.</h4>
+            <p>Leah integrates the native Picture-in-Picture mode of macOS.</p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img"><img src={url("/images/shot-preview.webp")} alt="Thumbnail preview" /></div>
+            <h4>Thumbnail preview.</h4>
+            <p>Leah generates thumbnail for the whole timeline. You can preview at any time point just like YouTube.</p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img"><img src={url("/images/shot-scrub.webp")} alt="Interactive Crop" /></div>
+            <h4>Interactive cropping and selection.</h4>
+            <p>
+              The interactive mode makes it easy to select an arbitrary region on the video. You can crop the selected
+              region afterward, or apply a delogo filter to hide watermarks or hard-coded subtitles.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block full">
+          <div class="feature-content mmode">
+            <h4>Music mode.</h4>
+            <p>
+              Though Leah is developed to be a video player, it also features a graceful music mode, allowing you to
+              concentrate on music with additional information such as album artworks and artist names around. You can hide
+              the album artwork and the playlist panel to obtain a minimal UI, or with all of them expanded to make it a
+              fully functional music player.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <h4>Superme decoding capability.</h4>
+            <p>Powered by mpv, Leah delivers the best decoding performance on macOS.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

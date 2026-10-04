@@ -1,0 +1,40 @@
+---
+// From IINA's website (source/layouts/layout.slim); see LICENSE-IINA.
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { url } from "../site";
+import "../styles/index.sass";
+
+interface Props {
+  title?: string;
+  htmlClass?: string;
+}
+const { title, htmlClass } = Astro.props;
+---
+
+<!doctype html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta charset="utf-8" />
+    <meta content="ie=edge" http-equiv="x-ua-compatible" />
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
+    <title>{title || "Leah"}</title>
+    <!-- favicons -->
+    <link rel="apple-touch-icon" href={url("/images/logo.png")} />
+    <link rel="icon" type="image/png" href={url("/images/logo.png")} />
+    <link rel="manifest" href={url("/images/site.webmanifest")} />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- assets -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&amp;subset=latin-ext" rel="stylesheet" />
+  </head>
+  <body class={htmlClass}>
+    <Header />
+    <div id="main">
+      <slot />
+      <Footer />
+    </div>
+    <script src="../scripts/index.js"></script>
+  </body>
+</html>

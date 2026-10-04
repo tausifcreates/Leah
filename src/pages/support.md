@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Page.astro
 title: Leah Support
 ---
 
@@ -53,4 +54,4 @@ Vorbis audio and VP9 video aren't supported.
 
 To report a problem or ask a question, open an issue at [github.com/tausifcreates/Leah/issues](https://github.com/tausifcreates/Leah/issues). Please include your macOS version and, if a video won't play, what kind of file it is.
 
-See also the [Leah Privacy Policy](./).
+See also the [Leah Privacy Policy](privacy).

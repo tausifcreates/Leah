@@ -1,4 +1,5 @@
 ---
+layout: ../layouts/Page.astro
 title: Leah Privacy Policy
 ---
 

@@ -1,0 +1,44 @@
+---
+// The privacy policy and support page keep the look they had when this
+// repository was published with GitHub Pages' Jekyll and its Primer theme:
+// this is that site's _layouts/default.html, with the head tags Jekyll's
+// SEO plugin added, and public/assets/css/style.css is the theme's
+// stylesheet as it was published.
+const { frontmatter } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const siteTitle = "Leah";
+const description = "Privacy policy and support for Leah, a video player for the Mac.";
+const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ""), Astro.site);
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{frontmatter.title} | {siteTitle}</title>
+    <meta property="og:title" content={frontmatter.title} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="description" content={description} />
+    <meta property="og:description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta property="twitter:title" content={frontmatter.title} />
+    <link rel="stylesheet" href={`${base}/assets/css/style.css`} />
+    <style is:inline>
+      .site-title a { display: inline-flex; align-items: center; gap: 0.35em; }
+      .site-title img { height: 1.3em; width: auto; }
+    </style>
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      <h1 class="site-title"><a href={`${base}/`}><img src={`${base}/logo.png`} alt="" />{siteTitle}</a></h1>
+
+      <slot />
+    </div>
+  </body>
+</html>
