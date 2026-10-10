@@ -24,6 +24,7 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
     <meta name="description" content={description} />
     <meta property="og:description" content={description} />
     <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href={`${base}/sitemap-index.xml`} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:type" content="website" />

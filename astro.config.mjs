@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 // The site is published at https://tausifcreates.github.io/Leah/. With a
 // custom domain, set SITE to it and BASE to "/".
@@ -11,6 +12,8 @@ export default defineConfig({
   // is served as is, as Jekyll served it, and Leah's App Store page links to.
   build: { format: "file" },
   devToolbar: { enabled: false },
+  // Writes sitemap-index.xml, listing every page, for search engines.
+  integrations: [sitemap()],
   vite: {
     css: {
       preprocessorOptions: {

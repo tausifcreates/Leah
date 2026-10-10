@@ -24,6 +24,11 @@ policy and support page set their description in their front matter. The home
 page also describes Leah to search engines as a `SoftwareApplication` with its
 price. Link previews use `public/images/og-image.jpg` (1200 × 630).
 
+`@astrojs/sitemap` writes `sitemap-index.xml` on every build, listing every
+page, and each page links to it. Submit
+https://tausifcreates.github.io/Leah/sitemap-index.xml in Google Search
+Console under a URL-prefix property for https://tausifcreates.github.io/Leah/.
+
 `src/site.ts` holds Leah's version, price and requirement. Keep it the same as
 the App Store listing.
 
@@ -59,7 +64,7 @@ Then open http://localhost:4321/Leah/. Pages reload as you save.
 | `og-image.jpg` | `shot-hero.webp` on a dark background, 1200 × 630 | Link previews |
 | `shot-scrub.webp`, `shot-watch.webp` | Leah App Store screenshots | Timeline Preview and Out of the Way on the home page, Features page |
 | `shot-preview.webp`, `shot-play.webp`, `shot-open.webp` | Leah App Store screenshots | Features page |
-| `logo.png` | Leah's start-screen logo, copied unchanged from the app | Header, browser icons |
+| `logo.png` | Leah's start-screen logo from the app, 192 pixels wide | Header, browser icons |
 | `swift.svg` | IINA's artwork (the Swift logo) | Behind the privacy section |
 | `text-bg*.png` | IINA's artwork | The picture-filled headings ("fast", feature names, More Features) |
 | `index-bg.svg` | IINA's artwork | The pattern behind the dark features section |
