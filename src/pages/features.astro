@@ -1,14 +1,18 @@
 ---
-// From IINA's website (source/localizable/features.html.slim); see LICENSE-IINA.
+// Laid out like IINA's features page (source/localizable/features.html.slim); see LICENSE-IINA.
 import Layout from "../layouts/Layout.astro";
-import { url } from "../site";
+import { site, url } from "../site";
+
+const title = "Leah Features: MKV, Subtitles and Lossless Sound on Mac";
+const description =
+  "Timeline preview, instant seeking, MKV and WebM with HEVC, VP9 and AV1, lossless 7.1 sound, PGS and SRT subtitles, and smooth interlaced video on your Mac.";
 ---
 
-<Layout title="Features | Leah - The modern media player for macOS" htmlClass="features">
+<Layout title={title} description={description} htmlClass="features">
   <section class="nav">
     <div class="container">
       <div class="nav-container">
-        <h2>Features</h2>
+        <h1 class="h2">Features</h1>
       </div>
     </div>
   </section>
@@ -18,80 +22,115 @@ import { url } from "../site";
       <div class="features-container">
         <div class="feature-block half">
           <div class="feature-content">
-            <div class="feature-img"><img src={url("/images/shot-scrub.webp")} alt="Sidebar" /></div>
-            <h4>Access all you need from the sidebar.</h4>
-            <p>All settings and options are available in the sidebar so you can adjust them in an intuitive way.</p>
-          </div>
-        </div>
-        <div class="feature-block half">
-          <div class="feature-content">
-            <div class="feature-img"><img src={url("/images/shot-preview.webp")} alt="Control" /></div>
-            <h4>Make full use of your mouse and trackpad.</h4>
-            <p>Leah allows you to assign actions for mouse scrolling and click events, trackpad gestures or even Force Touch clicks.</p>
-          </div>
-        </div>
-        <div class="feature-block full">
-          <div class="feature-content">
-            <h4>Highly customizable user interface.</h4>
-            <p>Leah provides 2 themes that match the system and 3 different layouts for the control bar.</p>
-            <div class="segment-control toggle-dark">
-              <div class="segment active" data-choice="light">Light + Top</div>
-              <div class="segment" data-choice="dark">Dark + Floating</div>
+            <div class="feature-img">
+              <img src={url("/images/shot-scrub.webp")} alt="A preview picture above Leah's timeline, showing the moment under the pointer" />
             </div>
-            <div class="content light">
-              <div class="feature-img"><img src={url("/images/shot-play.webp")} alt="Light + Top" /></div>
+            <h2>Preview before you jump.</h2>
+            <p>Hold the pointer over the timeline to preview any moment before you jump to it.</p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img">
+              <img src={url("/images/shot-preview.webp")} alt="Scrubbing along Leah's timeline, with the preview following the pointer" />
             </div>
-            <div class="content dark">
-              <div class="feature-img"><img src={url("/images/shot-watch.webp")} alt="Dark + Floating" /></div>
-            </div>
-          </div>
-        </div>
-        <div class="feature-block half">
-          <div class="feature-content">
-            <div class="feature-img"><img src={url("/images/shot-open.webp")} alt="Touch Bar" /></div>
-            <h4>Touch Bar support.</h4>
-            <p>Advanced Touch Bar support including a QuickTime-like seek preview.</p>
-          </div>
-        </div>
-        <div class="feature-block half">
-          <div class="feature-content">
-            <div class="feature-img"><img src={url("/images/shot-hero.webp")} alt="Picture-in-Picture" /></div>
-            <h4>Picture-in-Picture.</h4>
-            <p>Leah integrates the native Picture-in-Picture mode of macOS.</p>
-          </div>
-        </div>
-        <div class="feature-block half">
-          <div class="feature-content">
-            <div class="feature-img"><img src={url("/images/shot-preview.webp")} alt="Thumbnail preview" /></div>
-            <h4>Thumbnail preview.</h4>
-            <p>Leah generates thumbnail for the whole timeline. You can preview at any time point just like YouTube.</p>
-          </div>
-        </div>
-        <div class="feature-block half">
-          <div class="feature-content">
-            <div class="feature-img"><img src={url("/images/shot-scrub.webp")} alt="Interactive Crop" /></div>
-            <h4>Interactive cropping and selection.</h4>
+            <h2>Instant seeking and scrubbing.</h2>
             <p>
-              The interactive mode makes it easy to select an arbitrary region on the video. You can crop the selected
-              region afterward, or apply a delogo filter to hide watermarks or hard-coded subtitles.
+              Leah was built from the ground up for instant seeking. Drag along the timeline and the picture keeps up.
+              Press the Left Arrow or Right Arrow key to skip 5 seconds, or hold it to keep going.
             </p>
           </div>
         </div>
         <div class="feature-block full">
-          <div class="feature-content mmode">
-            <h4>Music mode.</h4>
+          <div class="feature-content">
+            <h2>Controls that stay out of the way.</h2>
             <p>
-              Though Leah is developed to be a video player, it also features a graceful music mode, allowing you to
-              concentrate on music with additional information such as album artworks and artist names around. You can hide
-              the album artwork and the playlist panel to obtain a minimal UI, or with all of them expanded to make it a
-              fully functional music player.
+              Controls fade away while you watch and come back when you move the pointer. Press Space to play or pause,
+              and the Up Arrow or Down Arrow key to change the volume.
+            </p>
+            <div class="feature-img mt-4">
+              <img src={url("/images/shot-play.webp")} alt="A video playing in Leah, with the timeline, time and volume controls along the bottom" />
+            </div>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <div class="feature-img">
+              <img src={url("/images/shot-open.webp")} alt="Leah's start screen, with a button to open a video" />
+            </div>
+            <h2>Open a video your way.</h2>
+            <p>
+              Open a video with a click, by dragging it onto the window, or from the Finder. Make Leah your default video
+              player with one click.
             </p>
           </div>
         </div>
         <div class="feature-block half">
           <div class="feature-content">
-            <h4>Superme decoding capability.</h4>
-            <p>Powered by mpv, Leah delivers the best decoding performance on macOS.</p>
+            <div class="feature-img">
+              <img src={url("/images/shot-hero.webp")} alt="Leah playing an MKV video" />
+            </div>
+            <h2>Plays MKV and WebM.</h2>
+            <p>
+              Leah plays MP4, MOV and M4V files, and every other video your Mac can play. It also plays MKV and WebM files
+              with H.264, HEVC (H.265), MPEG-2, MPEG-1, VP9 or AV1 video. VP9 plays on Macs with Apple silicon, and AV1
+              on Macs with Apple M3 or later.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <h2>Subtitles that show up on their own.</h2>
+            <p>
+              Leah shows SRT, ASS/SSA, WebVTT, PGS and VobSub subtitles. A subtitle file next to the video with the same
+              name, such as Movie.srt, shows up on its own. Drag any other SRT, WebVTT, ASS or SSA file onto the video to
+              add it. Leah picks subtitles in your Mac's preferred language.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <h2>Lossless surround sound.</h2>
+            <p>
+              Lossless surround sound in up to 7.1 channels plays exactly as it was recorded. Leah also plays 5.1
+              surround sound, and AAC, Apple Lossless, FLAC, Opus, PCM, MP3 and MP2 audio.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block full">
+          <div class="feature-content">
+            <h2>Smooth interlaced video.</h2>
+            <p>
+              Interlaced video from DVDs, TV recordings and camcorders is deinterlaced as it plays, so motion stays
+              smooth.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <h2>Media keys and Now Playing.</h2>
+            <p>
+              Play and pause with your keyboard's media keys or your headphones, and control Leah from Now Playing in
+              Control Center.
+            </p>
+          </div>
+        </div>
+        <div class="feature-block half">
+          <div class="feature-content">
+            <h2>Private.</h2>
+            <p>
+              Leah doesn't collect any data and never connects to the internet. Your videos stay on your Mac.
+              <a href={url("/privacy")}>Privacy Policy</a>
+            </p>
+          </div>
+        </div>
+        <div class="feature-block full">
+          <div class="feature-content">
+            <h2>Get Leah.</h2>
+            <p>
+              <a href={site.appStoreUrl}>Leah on the Mac App Store</a>. {site.requirement} Questions? See
+              <a href={url("/support")}>Leah Support</a>.
+            </p>
           </div>
         </div>
       </div>

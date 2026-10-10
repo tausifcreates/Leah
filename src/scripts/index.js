@@ -29,6 +29,11 @@ import { faTools } from "@fortawesome/free-solid-svg-icons/faTools";
 import { faSitemap } from "@fortawesome/free-solid-svg-icons/faSitemap";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 import { faCheck } from "@fortawesome/free-solid-svg-icons/faCheck";
+import { faApple } from "@fortawesome/free-brands-svg-icons/faApple";
+import { faLifeRing } from "@fortawesome/free-solid-svg-icons/faLifeRing";
+import { faLock } from "@fortawesome/free-solid-svg-icons/faLock";
+import { faVolumeHigh } from "@fortawesome/free-solid-svg-icons/faVolumeHigh";
+import { faClosedCaptioning } from "@fortawesome/free-solid-svg-icons/faClosedCaptioning";
 
 library.add(
   faCloudDownloadAlt,
@@ -57,6 +62,11 @@ library.add(
   faSitemap,
   faTimes,
   faCheck,
+  faApple,
+  faLifeRing,
+  faLock,
+  faVolumeHigh,
+  faClosedCaptioning,
 );
 dom.watch();
 

@@ -7,8 +7,9 @@
 const { frontmatter } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const siteTitle = "Leah";
-const description = "Privacy policy and support for Leah, a video player for the Mac.";
+const description = frontmatter.description;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ""), Astro.site);
+const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
 ---
 
 <!doctype html>
@@ -17,7 +18,7 @@ const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ""), Astro.site)
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{frontmatter.title} | {siteTitle}</title>
+    <title>{frontmatter.title} | Leah, a Video Player for Mac</title>
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:locale" content="en_US" />
     <meta name="description" content={description} />
@@ -26,8 +27,15 @@ const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ""), Astro.site)
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteTitle} />
     <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Leah playing a video on a Mac" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content={frontmatter.title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="icon" type="image/png" href={`${base}/logo.png`} />
     <link rel="stylesheet" href={`${base}/assets/css/style.css`} />
     <style is:inline>
       .site-title a { display: inline-flex; align-items: center; gap: 0.35em; }

@@ -2,24 +2,45 @@
 // From IINA's website (source/layouts/layout.slim); see LICENSE-IINA.
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { url } from "../site";
+import { site, url, canonicalUrl } from "../site";
 import "../styles/index.sass";
 
 interface Props {
-  title?: string;
+  title: string;
+  description: string;
   htmlClass?: string;
+  /** Schema.org data for the page, written as JSON-LD. */
+  structuredData?: object;
 }
-const { title, htmlClass } = Astro.props;
+const { title, description, htmlClass, structuredData } = Astro.props;
+const canonical = canonicalUrl(Astro.url.pathname, Astro.site);
+const image = new URL(url("/images/og-image.jpg"), Astro.site).href;
 ---
 
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <meta charset="utf-8" />
     <meta content="ie=edge" http-equiv="x-ua-compatible" />
     <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport" />
-    <title>{title || "Leah"}</title>
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Leah playing a video on a Mac" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
     <!-- favicons -->
     <link rel="apple-touch-icon" href={url("/images/logo.png")} />
     <link rel="icon" type="image/png" href={url("/images/logo.png")} />

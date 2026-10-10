@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/Page.astro
+description: "How to open videos, skip and scrub, choose subtitles and fix a video with no sound in Leah, a video player for the Mac. Plus the formats Leah plays."
 title: Leah Support
 ---
 
