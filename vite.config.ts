@@ -42,7 +42,8 @@ function lastModified(): Record<string, string> {
   // Build servers often check out only the latest commit; the dates need the rest.
   const git = (...args: string[]) => execFileSync("git", args, { encoding: "utf8" }).trim();
   if (git("rev-parse", "--is-shallow-repository") === "true") git("fetch", "--unshallow", "--quiet");
-  const date = (file: string) => git("log", "-1", "--follow", "--format=%cI", "--", file);
+  // Moves and renames don't count as changes.
+  const date = (file: string) => git("log", "-1", "--follow", "--diff-filter=AM", "--format=%cI", "--", file);
   const pages: Record<string, string> = {
     "/": "src/routes/+page.svelte",
     "/features": "src/routes/features/+page.svelte",
