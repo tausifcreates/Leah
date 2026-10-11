@@ -10,6 +10,9 @@
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
-	"workers_dev": true,
+	// Served only at leahapp.xyz; www.leahapp.xyz is redirected there by a zone
+	// Redirect Rule.
+	"routes": [{ "pattern": "leahapp.xyz", "custom_domain": true }],
+	"workers_dev": false,
 	"preview_urls": true
 }
