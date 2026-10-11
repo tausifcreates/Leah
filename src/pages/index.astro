@@ -57,7 +57,11 @@ const structuredData = {
     </div>
     <div class="container position-relative">
       <div class="sample-image">
-        <img src={url("/images/shot-hero.webp")} width="2000" height="1255" fetchpriority="high" alt="Leah playing a video, with the timeline and volume controls showing" />
+        <!-- The picture is hidden on phones, so they get an empty image instead of downloading it. -->
+        <picture>
+          <source media="(max-width: 767.98px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+          <img src={url("/images/shot-hero.webp")} srcset={`${url("/images/shot-hero-1000.webp")} 1000w, ${url("/images/shot-hero.webp")} 2000w`} sizes="830px" width="2000" height="1255" fetchpriority="high" alt="Leah playing a video, with the timeline and volume controls showing" />
+        </picture>
       </div>
       <div class="small-headline">/ˈliːə/</div>
       <h1 class="headline-group">
@@ -92,7 +96,7 @@ const structuredData = {
           </div>
           <div class="right">
             <div class="item-img">
-              <img src={url("/images/shot-scrub.webp")} width="800" height="502" loading="lazy" alt="A preview picture above Leah's timeline, showing the moment under the pointer" />
+              <img src={url("/images/shot-scrub.webp")} srcset={`${url("/images/shot-scrub-1000.webp")} 1000w, ${url("/images/shot-scrub.webp")} 2000w`} sizes="(max-width: 767.98px) 100vw, 740px" width="800" height="502" loading="lazy" alt="A preview picture above Leah's timeline, showing the moment under the pointer" />
             </div>
           </div>
         </div>
@@ -107,7 +111,7 @@ const structuredData = {
           </div>
           <div class="left">
             <div class="item-img">
-              <img src={url("/images/shot-watch.webp")} width="800" height="502" loading="lazy" alt="A video playing in Leah with the controls hidden" />
+              <img src={url("/images/shot-watch.webp")} srcset={`${url("/images/shot-watch-1000.webp")} 1000w, ${url("/images/shot-watch.webp")} 2000w`} sizes="(max-width: 767.98px) 100vw, 740px" width="800" height="502" loading="lazy" alt="A video playing in Leah with the controls hidden" />
             </div>
           </div>
         </div>
