@@ -9,7 +9,7 @@ description: "Why QuickTime Player can't open MKV files on a Mac, and three ways
 
 QuickTime Player plays MP4, MOV and M4V files, but it doesn't open MKV (Matroska) files. MKV is a container: one file that holds a video track, one or more audio tracks and subtitles. Movies and TV episodes, especially Blu-ray and DVD rips, often come as MKV files.
 
-There are three ways to watch an MKV file on a Mac.
+There are three ways to watch an MKV file on a Mac. For getting the sound and subtitles working too, see [How to play MKV files on Mac](play-mkv-on-mac).
 
 ## 1. Open it in a player that plays MKV
 

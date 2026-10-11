@@ -36,6 +36,8 @@ If the file has more than one audio track, Leah plays the one the file marks as 
 
 See also [MKV has no sound on Mac](mkv-no-sound-mac) and [DTS audio on Mac](dts-on-mac).
 
+For the rest of an MKV file, see [How to play MKV files on Mac](play-mkv-on-mac).
+
 ## Get Leah
 
 Leah is a video player for Macs with Apple silicon and macOS 15 or later. It also plays DTS, Dolby Digital and Dolby Digital Plus, and Blu-ray PGS subtitles. Get it on the [Mac App Store](https://apps.apple.com/app/id6816698102).

@@ -27,7 +27,8 @@ price. Link previews use `public/images/og-image.jpg` (1200 × 630).
 Pages written for search engines and AI assistants: `formats.md` (format
 tables), `faq.astro` (with FAQPage structured data built from the same
 answers), `leah-vs-iina.md`, `leah-vs-vlc.md`, `mkv-no-sound-mac.md`,
-`dts-on-mac.md`, `dolby-truehd-atmos-mac.md`, `pgs-vobsub-subtitles-mac.md`
+`play-mkv-on-mac.md` (the guide that links the others), `dts-on-mac.md`,
+`dolby-truehd-atmos-mac.md`, `pgs-vobsub-subtitles-mac.md`
 and `quicktime-cant-open-mkv.md`. Their facts come from the
 app's Help Book; keep them in step with it. Text pages can set `seoTitle` in
 their front matter to replace the whole `<title>`, and each gets

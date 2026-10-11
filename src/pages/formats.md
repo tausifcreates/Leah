@@ -68,4 +68,4 @@ Video from DVDs, TV recordings and older camcorders is often interlaced. Leah de
 
 Leah needs a Mac with Apple silicon and macOS 15 or later. It's on the [Mac App Store](https://apps.apple.com/app/id6816698102).
 
-If a video won't play or has no sound, see [MKV has no sound on Mac](mkv-no-sound-mac) or [Leah Support](support).
+For a step-by-step guide, see [How to play MKV files on Mac](play-mkv-on-mac). If a video won't play or has no sound, see [MKV has no sound on Mac](mkv-no-sound-mac) or [Leah Support](support).

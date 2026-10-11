@@ -38,6 +38,8 @@ To use a separate `.sup` file, or an `.idx` and `.sub` pair, with Leah, add it t
 
 VLC and IINA, two free players, also show PGS and VobSub subtitles. See [Leah vs IINA](leah-vs-iina) and [Leah vs VLC](leah-vs-vlc).
 
+For the rest of an MKV file, see [How to play MKV files on Mac](play-mkv-on-mac).
+
 ## Get Leah
 
 Leah is a video player for Macs with Apple silicon and macOS 15 or later. It also plays Dolby TrueHD in up to 7.1 channels and DTS. Get it on the [Mac App Store](https://apps.apple.com/app/id6816698102).

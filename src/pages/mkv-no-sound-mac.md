@@ -32,6 +32,8 @@ A player that shows track details, or a tool such as MediaInfo, shows the audio 
 
 Vorbis audio, used in some MKV and WebM files, isn't supported. Leah plays such a video without sound. DTS Express commentary tracks don't play either.
 
+For video and subtitles too, see [How to play MKV files on Mac](play-mkv-on-mac).
+
 ## Get Leah
 
 Leah is a video player for Macs with Apple silicon and macOS 15 or later, on the [Mac App Store](https://apps.apple.com/app/id6816698102).
