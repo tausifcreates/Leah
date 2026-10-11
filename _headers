@@ -1,0 +1,9 @@
+# Headers Cloudflare adds to the site's files. SvelteKit adds its own for
+# /_app/ below these when the site is built.
+/*
+  Strict-Transport-Security: max-age=31536000
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+/images/*
+  Cache-Control: public, max-age=86400

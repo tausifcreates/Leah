@@ -1,51 +1,52 @@
----
-// Laid out like IINA's home page (source/localizable/index.html.slim); see LICENSE-IINA.
-import Layout from "../layouts/Layout.astro";
-import { faAngleRight, faClosedCaptioning, faFileVideo, faLifeRing, faLock, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
-import { faApple } from "@fortawesome/free-brands-svg-icons";
-import Icon from "../components/Icon.astro";
-import { site, url, canonicalUrl } from "../site";
+<!-- Laid out like IINA's home page (source/localizable/index.html.slim); see LICENSE-IINA. -->
+<script lang="ts">
+  import { page } from "$app/state";
+  import MainLayout from "#lib/MainLayout.svelte";
+  import { faAngleRight, faClosedCaptioning, faFileVideo, faLifeRing, faLock, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+  import { faApple } from "@fortawesome/free-brands-svg-icons";
+  import Icon from "#lib/Icon.svelte";
+  import { site, url, canonicalUrl } from "#lib/site.ts";
 
-const title = "Leah: Fast Video Player for Mac That Plays MKV";
-const description =
-  "Leah is a fast video player for the Mac, built for instant seeking. It plays MKV and WebM, lossless 7.1 sound, and PGS and SRT subtitles. Private and offline.";
-const home = canonicalUrl(Astro.url.pathname, Astro.site);
+  const title = "Leah: Fast Video Player for Mac That Plays MKV";
+  const description =
+    "Leah is a fast video player for the Mac, built for instant seeking. It plays MKV and WebM, lossless 7.1 sound, and PGS and SRT subtitles. Private and offline.";
+  const home = canonicalUrl(page.url.pathname);
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    { "@type": "WebSite", name: site.name, alternateName: "Leah video player", url: home },
-    {
-      "@type": "SoftwareApplication",
-      name: site.name,
-      alternateName: [site.appStoreName, "Leah video player", "Leah for Mac"],
-      description,
-      url: home,
-      installUrl: site.appStoreUrl,
-      applicationCategory: "MultimediaApplication",
-      applicationSubCategory: "Video player",
-      sameAs: [site.appStoreUrl, site.wikidataUrl],
-      featureList: [
-        "Instant seeking and scrubbing",
-        "Timeline preview",
-        "MKV and WebM playback with H.264, HEVC, MPEG-2, MPEG-1, VP9 and AV1 video",
-        "Dolby TrueHD in up to 7.1 channels, Dolby Digital, Dolby Digital Plus and DTS",
-        "PGS, VobSub, SRT, ASS/SSA and WebVTT subtitles",
-        "Deinterlacing of interlaced video",
-        "Media keys and Now Playing",
-        "No data collection and no internet access",
-      ],
-      operatingSystem: site.minimumSystem,
-      softwareVersion: site.version,
-      screenshot: new URL(url("/images/og-image.jpg"), Astro.site).href,
-      author: { "@type": "Person", name: site.author },
-      offers: { "@type": "Offer", price: site.price, priceCurrency: site.currency, url: site.appStoreUrl },
-    },
-  ],
-};
----
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "WebSite", name: site.name, alternateName: "Leah video player", url: home },
+      {
+        "@type": "SoftwareApplication",
+        name: site.name,
+        alternateName: [site.appStoreName, "Leah video player", "Leah for Mac"],
+        description,
+        url: home,
+        installUrl: site.appStoreUrl,
+        applicationCategory: "MultimediaApplication",
+        applicationSubCategory: "Video player",
+        sameAs: [site.appStoreUrl, site.wikidataUrl],
+        featureList: [
+          "Instant seeking and scrubbing",
+          "Timeline preview",
+          "MKV and WebM playback with H.264, HEVC, MPEG-2, MPEG-1, VP9 and AV1 video",
+          "Dolby TrueHD in up to 7.1 channels, Dolby Digital, Dolby Digital Plus and DTS",
+          "PGS, VobSub, SRT, ASS/SSA and WebVTT subtitles",
+          "Deinterlacing of interlaced video",
+          "Media keys and Now Playing",
+          "No data collection and no internet access",
+        ],
+        operatingSystem: site.minimumSystem,
+        softwareVersion: site.version,
+        screenshot: canonicalUrl(url("/images/og-image.jpg")),
+        author: { "@type": "Person", name: site.author },
+        offers: { "@type": "Offer", price: site.price, priceCurrency: site.currency, url: site.appStoreUrl },
+      },
+    ],
+  };
+</script>
 
-<Layout title={title} description={description} htmlClass="index" structuredData={structuredData}>
+<MainLayout title={title} description={description} structuredData={structuredData}>
   <section class="title">
     <div class="background">
       <svg width="100%" height="100%" viewBox="0 0 1200 800">
@@ -198,4 +199,4 @@ const structuredData = {
       </div>
     </div>
   </section>
-</Layout>
+</MainLayout>

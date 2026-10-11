@@ -1,22 +1,23 @@
----
-// Laid out like IINA's features page (source/localizable/features.html.slim); see LICENSE-IINA.
-import Layout from "../layouts/Layout.astro";
-import { site, url, canonicalUrl } from "../site";
+<!-- Laid out like IINA's features page (source/localizable/features.html.slim); see LICENSE-IINA. -->
+<script lang="ts">
+  import { page } from "$app/state";
+  import MainLayout from "#lib/MainLayout.svelte";
+  import { site, url, canonicalUrl } from "#lib/site.ts";
 
-const title = "Leah Features: MKV, Subtitles and Lossless Sound on Mac";
-const description =
-  "Timeline preview, instant seeking, MKV and WebM with HEVC, VP9 and AV1, lossless 7.1 sound, PGS and SRT subtitles, and smooth interlaced video on your Mac.";
-const breadcrumbs = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Leah", item: new URL(url("/"), Astro.site).href },
-    { "@type": "ListItem", position: 2, name: "Features", item: canonicalUrl(Astro.url.pathname, Astro.site) },
-  ],
-};
----
+  const title = "Leah Features: MKV, Subtitles and Lossless Sound on Mac";
+  const description =
+    "Timeline preview, instant seeking, MKV and WebM with HEVC, VP9 and AV1, lossless 7.1 sound, PGS and SRT subtitles, and smooth interlaced video on your Mac.";
+  const breadcrumbs = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Leah", item: canonicalUrl(url("/")) },
+      { "@type": "ListItem", position: 2, name: "Features", item: canonicalUrl(page.url.pathname) },
+    ],
+  };
+</script>
 
-<Layout title={title} description={description} htmlClass="features" structuredData={breadcrumbs}>
+<MainLayout title={title} description={description} structuredData={breadcrumbs}>
   <section class="nav">
     <div class="container">
       <div class="nav-container">
@@ -144,4 +145,4 @@ const breadcrumbs = {
       </div>
     </div>
   </section>
-</Layout>
+</MainLayout>

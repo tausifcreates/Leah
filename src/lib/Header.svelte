@@ -1,16 +1,15 @@
----
-// From IINA's website (source/_header.slim); see LICENSE-IINA.
-import { faBars, faCommentDots, faFileVideo, faLifeRing, faList } from "@fortawesome/free-solid-svg-icons";
-import { faApple } from "@fortawesome/free-brands-svg-icons";
-import Icon from "./Icon.astro";
-import { site, url } from "../site";
----
+<!-- From IINA's website (source/_header.slim); see LICENSE-IINA. -->
+<script lang="ts">
+  import { faBars, faCommentDots, faFileVideo, faLifeRing, faList } from "@fortawesome/free-solid-svg-icons";
+  import { faApple } from "@fortawesome/free-brands-svg-icons";
+  import Icon from "./Icon.svelte";
+  import { site, url } from "./site.ts";
+</script>
 
 <div id="header">
   <nav class="navbar navbar-light navbar-expand-sm">
     <a class="navbar-brand" href={url("/")}>
-      <img src={url("/images/logo.png")} width="192" height="179" alt="" />
-      <span class="ml-2">Leah</span>
+      <img src={url("/images/logo.png")} width="192" height="179" alt="" /><span class="ml-2">Leah</span>
     </a>
     <button
       class="navbar-toggler"

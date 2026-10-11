@@ -1,9 +1,9 @@
----
-// From IINA's website (source/_footer.slim); see LICENSE-IINA.
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
-import Icon from "./Icon.astro";
-import { site, url } from "../site";
----
+<!-- From IINA's website (source/_footer.slim); see LICENSE-IINA. -->
+<script lang="ts">
+  import { faGithub } from "@fortawesome/free-brands-svg-icons";
+  import Icon from "./Icon.svelte";
+  import { site, url } from "./site.ts";
+</script>
 
 <footer>
   <div class="container">

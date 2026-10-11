@@ -3,6 +3,7 @@
 
 export const site = {
   name: "Leah",
+  origin: "https://leahapp.xyz",
   appStoreName: "Leah: Modern Fast Video Player",
   appStoreUrl: "https://apps.apple.com/app/id6816698102",
   wikidataUrl: "https://www.wikidata.org/wiki/Q141696867",
@@ -15,13 +16,23 @@ export const site = {
   supportUrl: "https://github.com/tausifcreates/Leah/issues",
 };
 
-/** A path inside the site, under the base folder it is published in. */
+/** A path on the site, such as "/features". */
 export function url(path: string): string {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  return `${base}/${path.replace(/^\//, "")}`;
+  return `/${path.replace(/^\//, "")}`;
 }
 
-/** The page's full address, without the .html the build gives its files. */
-export function canonicalUrl(pathname: string, siteUrl: URL | undefined): string {
-  return new URL(pathname.replace(/\.html$/, "").replace(/\/index$/, "/"), siteUrl).href;
+/** The full address of a path on the site, without the .html of its file. */
+export function canonicalUrl(pathname: string): string {
+  return new URL(pathname.replace(/\.html$/, "").replace(/\/index$/, "/"), site.origin).href;
+}
+
+/** A Markdown page in src/content, rendered to HTML when the site is built. */
+export interface MarkdownPage {
+  frontmatter: {
+    title: string;
+    seoTitle?: string;
+    description: string;
+    noindex?: boolean;
+  };
+  html: string;
 }
