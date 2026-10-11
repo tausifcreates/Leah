@@ -2,13 +2,14 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
-// The site is published at https://tausifcreates.github.io/Leah/. With a
-// custom domain, set SITE to it and BASE to "/".
+// The site is published at https://leahapp.xyz/. GitHub Pages serves it there
+// as the repository's custom domain, and sends tausifcreates.github.io/Leah/
+// addresses on to it.
 export default defineConfig({
-  site: process.env.SITE ?? "https://tausifcreates.github.io",
-  base: process.env.BASE ?? "/Leah/",
+  site: process.env.SITE ?? "https://leahapp.xyz",
+  base: process.env.BASE ?? "/",
   trailingSlash: "ignore",
-  // Pages as support.html rather than support/index.html, so /Leah/support
+  // Pages as support.html rather than support/index.html, so /support
   // is served as is, as Jekyll served it, and Leah's App Store page links to.
   build: { format: "file" },
   devToolbar: { enabled: false },

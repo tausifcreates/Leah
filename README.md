@@ -1,6 +1,6 @@
 # Leah
 
-The website for Leah, a video player for the Mac: https://tausifcreates.github.io/Leah/
+The website for Leah, a video player for the Mac: https://leahapp.xyz/
 
 ## About this site
 
@@ -26,8 +26,8 @@ price. Link previews use `public/images/og-image.jpg` (1200 × 630).
 
 `@astrojs/sitemap` writes `sitemap-index.xml` on every build, listing every
 page, and each page links to it. Submit
-https://tausifcreates.github.io/Leah/sitemap-index.xml in Google Search
-Console under a URL-prefix property for https://tausifcreates.github.io/Leah/.
+https://leahapp.xyz/sitemap-index.xml in Google Search Console, under the
+leahapp.xyz domain property. `public/robots.txt` also points crawlers to it.
 
 `src/site.ts` holds Leah's version, price and requirement. Keep it the same as
 the App Store listing.
@@ -39,7 +39,7 @@ npm install
 npm run dev
 ```
 
-Then open http://localhost:4321/Leah/. Pages reload as you save.
+Then open http://localhost:4321/. Pages reload as you save.
 
 `npm run build` makes the finished site in `dist/`.
 
@@ -83,4 +83,8 @@ both.
 
 `.github/workflows/deploy.yml` builds the site and publishes it with GitHub
 Pages on every push to main. In Settings > Pages, Source must be "GitHub
-Actions".
+Actions" and Custom domain must be leahapp.xyz, with Enforce HTTPS on.
+
+leahapp.xyz's DNS is on Cloudflare, with GitHub Pages' records set to "DNS
+only": A and AAAA records for leahapp.xyz, and www as a CNAME to
+tausifcreates.github.io.
