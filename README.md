@@ -24,6 +24,15 @@ policy and support page set their description in their front matter. The home
 page also describes Leah to search engines as a `SoftwareApplication` with its
 price. Link previews use `public/images/og-image.jpg` (1200 × 630).
 
+Pages written for search engines and AI assistants: `formats.md` (format
+tables), `faq.astro` (with FAQPage structured data built from the same
+answers), `leah-vs-iina.md`, `leah-vs-vlc.md` and `mkv-no-sound-mac.md`. Their
+facts come from the app's Help Book; keep them in step with it.
+`public/llms.txt` sums up Leah for AI crawlers. The 32-character `.txt` file
+in `public/` is the site's IndexNow key: after publishing new or changed
+pages, send their addresses to https://api.indexnow.org/indexnow (Bing and
+others) with that key.
+
 `@astrojs/sitemap` writes `sitemap-index.xml` on every build, listing every
 page, and each page links to it. Submit
 https://leahapp.xyz/sitemap-index.xml in Google Search Console, under the

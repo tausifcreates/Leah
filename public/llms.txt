@@ -1,0 +1,29 @@
+# Leah
+
+> Leah is a video player for the Mac, made by Tausif Khan and sold on the Mac App Store for $9.99. It was built from the ground up for instant seeking and scrubbing. It plays MP4, MOV and M4V files, and MKV and WebM files with Dolby TrueHD, DTS and Dolby Digital audio and Blu-ray PGS and DVD VobSub subtitles. It needs a Mac with Apple silicon and macOS 15 or later, collects no data and never connects to the internet.
+
+Leah is not related to Leawo. Its App Store name is "Leah: Modern Fast Video Player".
+
+Key facts:
+
+- Video in MKV and WebM: H.264, HEVC (H.265), MPEG-2, MPEG-1, VP9 (Apple silicon), AV1 (Apple M3 or later). Interlaced video is deinterlaced as it plays.
+- Audio: Dolby TrueHD up to 7.1 (Atmos plays as 7.1), Dolby Digital, Dolby Digital Plus, DTS up to 5.1 (the core of DTS-HD and DTS:X), AAC, FLAC, Opus, Apple Lossless, PCM, MP3, MP2. Not supported: Vorbis, DTS Express.
+- Subtitles: SRT, ASS/SSA, WebVTT, PGS, VobSub, MP4 text. Same-name subtitle files load on their own.
+- Not supported: VP8 and MPEG-4 Part 2 (Xvid, DivX) video, Intel Macs, Picture in Picture, playlists, plugins, network streams.
+- Seeking: a 5-second skip shows the new picture in about 30 ms (median, Leah's own tests on 1080p to 4K videos, Apple M1 Pro).
+
+## Pages
+
+- [Home](https://leahapp.xyz/): What Leah is and does
+- [Features](https://leahapp.xyz/features): Every feature, with screenshots
+- [Formats Leah plays](https://leahapp.xyz/formats): Full video, audio and subtitle format tables
+- [FAQ](https://leahapp.xyz/faq): Price, Macs, formats, seeking, privacy
+- [Leah vs IINA](https://leahapp.xyz/leah-vs-iina): Comparison with IINA
+- [Leah vs VLC](https://leahapp.xyz/leah-vs-vlc): Comparison with VLC
+- [MKV has no sound on Mac](https://leahapp.xyz/mkv-no-sound-mac): Why MKV audio is silent and how to fix it
+- [Support](https://leahapp.xyz/support): How to use Leah and fix problems
+- [Privacy Policy](https://leahapp.xyz/privacy): Leah collects no data
+
+## Get Leah
+
+- [Leah on the Mac App Store](https://apps.apple.com/app/id6816698102)

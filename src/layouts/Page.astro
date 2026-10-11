@@ -4,7 +4,18 @@
 // this is that site's _layouts/default.html, with the head tags Jekyll's
 // SEO plugin added, and public/assets/css/style.css is the theme's
 // stylesheet as it was published.
-const { frontmatter } = Astro.props;
+const { frontmatter, structuredData } = Astro.props;
+const data = structuredData ?? frontmatter.structuredData;
+const links = [
+  ["Home", "/"],
+  ["Features", "/features"],
+  ["Formats", "/formats"],
+  ["FAQ", "/faq"],
+  ["Leah vs IINA", "/leah-vs-iina"],
+  ["Leah vs VLC", "/leah-vs-vlc"],
+  ["Support", "/support"],
+  ["Privacy", "/privacy"],
+];
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const siteTitle = "Leah";
 const description = frontmatter.description;
@@ -37,10 +48,13 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
     <link rel="icon" type="image/png" href={`${base}/logo.png`} />
+    {data && <script type="application/ld+json" set:html={JSON.stringify(data)} />}
     <link rel="stylesheet" href={`${base}/assets/css/style.css`} />
     <style is:inline>
       .site-title a { display: inline-flex; align-items: center; gap: 0.35em; }
       .site-title img { height: 1.3em; width: auto; }
+      .page-links { margin-top: 3em; padding-top: 1em; border-top: 1px solid #eaecef; font-size: 0.9em; }
+      .page-links a { margin-right: 1em; white-space: nowrap; }
     </style>
   </head>
   <body>
@@ -48,6 +62,11 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
       <h1 class="site-title"><a href={`${base}/`}><img src={`${base}/logo.png`} alt="" />{siteTitle}</a></h1>
 
       <slot />
+
+      <nav class="page-links" aria-label="Leah pages">
+        {links.map(([name, path]) => <a href={`${base}${path}`}>{name}</a>)}
+        <a href="https://apps.apple.com/app/id6816698102">Mac App Store</a>
+      </nav>
     </div>
   </body>
 </html>

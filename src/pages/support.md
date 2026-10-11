@@ -37,22 +37,22 @@ Leah shows SRT, ASS/SSA, WebVTT and MP4 text subtitles, and PGS and VobSub pictu
 
 ## Formats Leah plays
 
-Leah plays MP4, MOV and M4V files, and other videos your Mac can play. It also plays MKV (Matroska) files with:
+Leah plays MP4, MOV and M4V files, and other videos your Mac can play. It also plays MKV (Matroska) and WebM files with:
 
-- **Video:** H.264, HEVC (H.265), and AV1 on Macs with Apple M3 or later.
-- **Audio:** AAC, FLAC, Opus, MP3 and MP2, 5.1 surround sound, and lossless surround sound in up to 7.1 channels.
+- **Video:** H.264, HEVC (H.265), MPEG-2 and MPEG-1, VP9 on Macs with Apple silicon, and AV1 on Macs with Apple M3 or later.
+- **Audio:** Dolby TrueHD in up to 7.1 channels, Dolby Digital, Dolby Digital Plus, DTS in up to 5.1 channels, AAC, Apple Lossless, FLAC, Opus, PCM, MP3 and MP2.
 - **Subtitles:** SRT, ASS/SSA, WebVTT, PGS and VobSub.
 
-Vorbis audio and VP9 video aren't supported.
+Vorbis audio, DTS Express commentary tracks, and VP8 and MPEG-4 Part 2 (Xvid and DivX) video aren't supported. See [Formats Leah plays](formats) for details.
 
 ## If a video won't play or has no sound
 
-**The video plays, but there's no sound.** The audio may be in a format Leah can't play, such as Vorbis. Leah then plays the video without sound. Also check that your Mac's volume is up and that sound is going to the output you expect.
+**The video plays, but there's no sound.** The audio may be in a format Leah can't play, such as Vorbis or a DTS Express commentary track. Leah then plays the video without sound. Also check that your Mac's volume is up and that sound is going to the output you expect. See [MKV has no sound on Mac](mkv-no-sound-mac).
 
-**Leah shows "This file can't be played".** The file may use a video format Leah doesn't support, such as VP9, or AV1 on a Mac older than Apple M3. The file may also be damaged or incomplete, for example if it didn't finish downloading.
+**Leah shows "This file can't be played".** The file may use a video format Leah doesn't support, such as VP8, or AV1 on a Mac older than Apple M3. The file may also be damaged or incomplete, for example if it didn't finish downloading.
 
 ## Contact
 
 To report a problem or ask a question, open an issue at [github.com/tausifcreates/Leah/issues](https://github.com/tausifcreates/Leah/issues). Please include your macOS version and, if a video won't play, what kind of file it is.
 
-See also the [Leah Privacy Policy](privacy).
+See also the [Leah FAQ](faq) and the [Leah Privacy Policy](privacy).
