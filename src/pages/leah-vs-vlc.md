@@ -46,6 +46,6 @@ Leah plays MP4, MOV and M4V, and MKV and WebM files with H.264, HEVC, MPEG-2, MP
 
 ## Get Leah
 
-Leah is on the [Mac App Store](https://apps.apple.com/app/id6816698102). See also [Leah vs IINA](leah-vs-iina) and the [Leah FAQ](faq).
+Leah is on the [Mac App Store](https://apps.apple.com/app/id6816698102). See also [IINA alternatives](iina-alternatives), [Leah vs IINA](leah-vs-iina), [Leah vs Elmedia Player](leah-vs-elmedia) and the [Leah FAQ](faq).
 
 *VLC details are from [videolan.org](https://www.videolan.org/vlc/download-macosx.html) as of October 2026.*

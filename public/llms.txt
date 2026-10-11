@@ -21,6 +21,10 @@ Key facts:
 - [How to play MKV files on Mac](https://leahapp.xyz/play-mkv-on-mac): Guide to MKV video, audio and subtitles on a Mac, linking every guide below
 - [Leah vs IINA](https://leahapp.xyz/leah-vs-iina): Comparison with IINA
 - [Leah vs VLC](https://leahapp.xyz/leah-vs-vlc): Comparison with VLC
+- [Leah vs Infuse](https://leahapp.xyz/leah-vs-infuse): Comparison with Infuse, the media library app
+- [Leah vs Elmedia Player](https://leahapp.xyz/leah-vs-elmedia): Comparison with Elmedia Player
+- [IINA alternatives for Mac](https://leahapp.xyz/iina-alternatives): VLC, Infuse, Elmedia Player, Movist Pro, mpv and Leah compared
+- [Fast seeking video player for Mac](https://leahapp.xyz/fast-seeking-video-player-mac): How fast Leah seeks, and why seeking can be slow
 - [MKV has no sound on Mac](https://leahapp.xyz/mkv-no-sound-mac): Why MKV audio is silent and how to fix it
 - [Dolby TrueHD and Atmos on Mac](https://leahapp.xyz/dolby-truehd-atmos-mac): Lossless 7.1 TrueHD, and how Atmos tracks play
 - [PGS and VobSub subtitles on Mac](https://leahapp.xyz/pgs-vobsub-subtitles-mac): Showing Blu-ray and DVD subtitles, and separate .sup and .idx files

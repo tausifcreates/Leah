@@ -26,11 +26,14 @@ price. Link previews use `public/images/og-image.jpg` (1200 × 630).
 
 Pages written for search engines and AI assistants: `formats.md` (format
 tables), `faq.astro` (with FAQPage structured data built from the same
-answers), `leah-vs-iina.md`, `leah-vs-vlc.md`, `mkv-no-sound-mac.md`,
+answers), `leah-vs-iina.md`, `leah-vs-vlc.md`, `leah-vs-infuse.md`,
+`leah-vs-elmedia.md`, `iina-alternatives.md`, `fast-seeking-video-player-mac.md`,
+`mkv-no-sound-mac.md`,
 `play-mkv-on-mac.md` (the guide that links the others), `dts-on-mac.md`,
 `dolby-truehd-atmos-mac.md`, `pgs-vobsub-subtitles-mac.md`
 and `quicktime-cant-open-mkv.md`. Their facts come from the
-app's Help Book; keep them in step with it. Text pages can set `seoTitle` in
+app's Help Book; keep them in step with it. Other players' details come from
+their developers' sites and App Store listings, dated at the foot of each page. Text pages can set `seoTitle` in
 their front matter to replace the whole `<title>`, and each gets
 BreadcrumbList structured data from `Page.astro`. `404.md` is the page GitHub
 Pages shows for a missing address; it's marked noindex and left out of the

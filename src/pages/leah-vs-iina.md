@@ -52,6 +52,6 @@ IINA plays the formats mpv supports, which is a wider list.
 
 ## Get Leah
 
-Leah is on the [Mac App Store](https://apps.apple.com/app/id6816698102). See also [Leah vs VLC](leah-vs-vlc) and the [Leah FAQ](faq).
+Leah is on the [Mac App Store](https://apps.apple.com/app/id6816698102). See also [IINA alternatives](iina-alternatives), [Leah vs VLC](leah-vs-vlc), [Leah vs Infuse](leah-vs-infuse) and the [Leah FAQ](faq).
 
 *IINA details are from [iina.io](https://iina.io/) as of October 2026.*
