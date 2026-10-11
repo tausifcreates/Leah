@@ -106,9 +106,9 @@
         <div class="space-y-2 px-2 pb-2">
           <div class="flex items-center gap-2 text-[11px] text-muted-foreground group-hover:text-foreground sm:text-xs">
             <p>by {post.author}</p>
-            <div class="size-1 rounded-full bg-muted-foreground"></div>
+            <span aria-hidden="true">|</span>
             <p><time datetime={post.createdAt}>{date(post.createdAt)}</time></p>
-            <div class="size-1 rounded-full bg-muted-foreground"></div>
+            <span aria-hidden="true">|</span>
             <p>{post.readTime}</p>
           </div>
           <h2 class="line-clamp-2 text-lg font-semibold">{post.title}</h2>

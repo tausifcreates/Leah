@@ -126,9 +126,9 @@ let covers: [String: Cover] = [
   "play-mkv-on-mac": .labelled("MKV"),
   "mkv-no-sound-mac": .labelled("MKV audio"),
   "quicktime-cant-open-mkv": .labelled("Open MKV"),
-  "dolby-truehd-atmos-mac": .labelled("TrueHD · Atmos"),
+  "dolby-truehd-atmos-mac": .labelled("TrueHD | Atmos"),
   "dts-on-mac": .labelled("DTS"),
-  "pgs-vobsub-subtitles-mac": .labelled("PGS · VobSub"),
+  "pgs-vobsub-subtitles-mac": .labelled("PGS | VobSub"),
   "fast-seeking-video-player-mac": .labelled("Fast seeking"),
 ]
 
