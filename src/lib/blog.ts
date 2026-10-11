@@ -50,5 +50,5 @@ export const posts: Post[] = slugs
   })
   .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt));
 
-/** A post's cover picture, made by src/routes/blog/covers/[slug].svg. */
-export const coverUrl = (slug: string) => `/blog/covers/${slug}.svg`;
+/** A post's cover picture, made by design/make-blog-covers.swift. */
+export const coverUrl = (slug: string) => `/blog/covers/${slug}.webp`;

@@ -11,3 +11,11 @@
   --color-accent: #eef1f4;
   --color-link: #0366d6;
 }
+
+/* The other pages are light whatever the system's appearance; so is this one. */
+@layer base {
+  html {
+    color-scheme: light;
+    background-color: #fff;
+  }
+}

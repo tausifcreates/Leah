@@ -45,7 +45,10 @@ first, laid out like Efferd's blogs-3 block and styled with Tailwind, which only
 that page loads (`src/routes/blog/blog.css`). The list is in `src/lib/blog.ts`;
 each card takes its title and description from the page's front matter, its
 date from the page's first commit and its read time from its word count. The
-covers are made at build time by `src/routes/blog/covers/[slug].svg`.
+covers in `static/blog/covers/` are made from the players' official icons
+(`design/blog-icons/`) by `swift design/make-blog-covers.swift`; add a line
+there for each new post. Dolby, DTS, Matroska and Apple logos are licensed
+trademarks, so guides about them get Leah's icon and a text label instead.
 `static/llms.txt` sums up Leah for AI crawlers. The 32-character `.txt` file
 in `static/` is the site's IndexNow key: after publishing new or changed
 pages, send their addresses to https://api.indexnow.org/indexnow (Bing and
