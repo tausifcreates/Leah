@@ -8,7 +8,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
   import { page } from "$app/state";
-  import { site, url, canonicalUrl, type MarkdownPage } from "./site.ts";
+  import { site, url, canonicalUrl, pageLinks, type MarkdownPage } from "./site.ts";
 
   let {
     frontmatter,
@@ -23,26 +23,6 @@
     children: Snippet;
   } = $props();
 
-  const links = [
-    ["Home", "/"],
-    ["Features", "/features"],
-    ["Formats", "/formats"],
-    ["Fast seeking", "/fast-seeking-video-player-mac"],
-    ["FAQ", "/faq"],
-    ["Play MKV on Mac", "/play-mkv-on-mac"],
-    ["IINA alternatives", "/iina-alternatives"],
-    ["Leah vs IINA", "/leah-vs-iina"],
-    ["Leah vs VLC", "/leah-vs-vlc"],
-    ["Leah vs Infuse", "/leah-vs-infuse"],
-    ["Leah vs Elmedia", "/leah-vs-elmedia"],
-    ["MKV has no sound", "/mkv-no-sound-mac"],
-    ["TrueHD and Atmos on Mac", "/dolby-truehd-atmos-mac"],
-    ["DTS on Mac", "/dts-on-mac"],
-    ["PGS and VobSub subtitles", "/pgs-vobsub-subtitles-mac"],
-    ["QuickTime can't open MKV", "/quicktime-cant-open-mkv"],
-    ["Support", "/support"],
-    ["Privacy", "/privacy"],
-  ];
   const siteTitle = "Leah";
 
   // seoTitle replaces the whole <title> when "{title} | Leah, a Video Player for
@@ -108,7 +88,7 @@
   {@render children()}
 
   <nav class="page-links" aria-label="Leah pages">
-    {#each links as [name, path]}<a href={url(path)}>{name}</a>{/each}
+    {#each pageLinks as [name, path]}<a href={url(path)}>{name}</a>{/each}
     <a href="https://apps.apple.com/app/id6816698102">Mac App Store</a>
   </nav>
 </div>

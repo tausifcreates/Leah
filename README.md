@@ -40,6 +40,12 @@ BreadcrumbList structured data from `src/lib/PageLayout.svelte`. `404.md` is
 the page shown, with a 404 status, for any missing address; it's marked noindex
 and left out of the sitemap. The screenshots each have a 1000-pixel copy
 (`shot-*-1000.webp`, made with `cwebp -q 82 -resize 1000 0`) for `srcset`.
+`/blog` (`src/routes/blog/`) lists the guides and comparisons as cards, newest
+first, laid out like Efferd's blogs-3 block and styled with Tailwind, which only
+that page loads (`src/routes/blog/blog.css`). The list is in `src/lib/blog.ts`;
+each card takes its title and description from the page's front matter, its
+date from the page's first commit and its read time from its word count. The
+covers are made at build time by `src/routes/blog/covers/[slug].svg`.
 `static/llms.txt` sums up Leah for AI crawlers. The 32-character `.txt` file
 in `static/` is the site's IndexNow key: after publishing new or changed
 pages, send their addresses to https://api.indexnow.org/indexnow (Bing and

@@ -1,4 +1,5 @@
 import adapter from "@sveltejs/adapter-cloudflare";
+import tailwindcss from "@tailwindcss/vite";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig, type Plugin } from "vite";
 import { execFileSync } from "node:child_process";
@@ -35,33 +36,41 @@ function markdown(): Plugin {
   };
 }
 
-// The date of the last commit that changed each page's source, for its
-// <lastmod> in the sitemap, keyed by the page's path.
-function lastModified(): Record<string, string> {
-  const dates: Record<string, string> = {};
+// Dates from git for each page's source, keyed by the page's path: when it
+// was first added (for the blog) and last changed (for the sitemap's <lastmod>).
+function gitDates(): { created: Record<string, string>; lastmod: Record<string, string> } {
+  const created: Record<string, string> = {};
+  const lastmod: Record<string, string> = {};
   // Build servers often check out only the latest commit; the dates need the rest.
   const git = (...args: string[]) => execFileSync("git", args, { encoding: "utf8" }).trim();
   if (git("rev-parse", "--is-shallow-repository") === "true") git("fetch", "--unshallow", "--quiet");
   // Moves and renames don't count as changes.
-  const date = (file: string) => git("log", "-1", "--follow", "--diff-filter=AM", "--format=%cI", "--", file);
+  const log = (file: string) => git("log", "--follow", "--diff-filter=AM", "--format=%cI", "--", file).split("\n");
   const pages: Record<string, string> = {
     "/": "src/routes/+page.svelte",
     "/features": "src/routes/features/+page.svelte",
     "/faq": "src/routes/faq/+page.svelte",
+    "/blog": "src/routes/blog/+page.svelte",
   };
   for (const file of readdirSync("src/content")) {
     if (file.endsWith(".md") && file !== "404.md") pages[`/${file.slice(0, -3)}`] = `src/content/${file}`;
   }
   for (const [path, file] of Object.entries(pages)) {
-    const d = existsSync(file) ? date(file) : "";
-    if (d) dates[path] = d;
+    const dates = existsSync(file) ? log(file).filter(Boolean) : [];
+    if (dates.length) {
+      lastmod[path] = dates[0];
+      created[path] = dates[dates.length - 1];
+    }
   }
-  return dates;
+  return { created, lastmod };
 }
+
+const dates = gitDates();
 
 export default defineConfig({
   define: {
-    __LASTMOD__: JSON.stringify(lastModified()),
+    __LASTMOD__: JSON.stringify(dates.lastmod),
+    __CREATED__: JSON.stringify(dates.created),
   },
   css: {
     preprocessorOptions: {
@@ -79,6 +88,8 @@ export default defineConfig({
   },
   plugins: [
     markdown(),
+    // Tailwind is used only by the blog page (src/routes/blog/blog.css).
+    tailwindcss(),
     sveltekit({
       compilerOptions: {
         // Force runes mode for the project, except for libraries. Can be removed in svelte 6.

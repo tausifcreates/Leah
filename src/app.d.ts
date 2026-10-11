@@ -12,6 +12,8 @@ declare global {
 
   /** Each page's last-changed date for the sitemap, set in vite.config.ts. */
   const __LASTMOD__: Record<string, string>;
+  /** Each page's first-commit date, set in vite.config.ts. */
+  const __CREATED__: Record<string, string>;
 }
 
 declare module "*.md" {

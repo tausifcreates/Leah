@@ -4,6 +4,7 @@ import { site } from "./site.ts";
 const pages = import.meta.glob("/src/content/*.md");
 export const paths = [
   "/",
+  "/blog",
   "/faq",
   "/features",
   ...Object.keys(pages)

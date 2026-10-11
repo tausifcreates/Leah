@@ -18,6 +18,7 @@ Key facts:
 - [Features](https://leahapp.xyz/features): Every feature, with screenshots
 - [Formats Leah plays](https://leahapp.xyz/formats): Full video, audio and subtitle format tables
 - [FAQ](https://leahapp.xyz/faq): Price, Macs, formats, seeking, privacy
+- [Blog](https://leahapp.xyz/blog): Every guide and comparison, newest first
 - [How to play MKV files on Mac](https://leahapp.xyz/play-mkv-on-mac): Guide to MKV video, audio and subtitles on a Mac, linking every guide below
 - [Leah vs IINA](https://leahapp.xyz/leah-vs-iina): Comparison with IINA
 - [Leah vs VLC](https://leahapp.xyz/leah-vs-vlc): Comparison with VLC

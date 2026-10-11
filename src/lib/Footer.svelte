@@ -22,6 +22,7 @@
       <a href={url("/formats")}>Formats</a> ·
       <a href={url("/fast-seeking-video-player-mac")}>Fast seeking</a> ·
       <a href={url("/faq")}>FAQ</a> ·
+      <a href={url("/blog")}>Blog</a> ·
       <a href={url("/play-mkv-on-mac")}>Play MKV on Mac</a> ·
       <a href={url("/iina-alternatives")}>IINA alternatives</a> ·
       <a href={url("/leah-vs-iina")}>Leah vs IINA</a> ·
