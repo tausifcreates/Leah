@@ -82,6 +82,15 @@ body.index
                     border-radius: 0 2rem 2rem 0
                 &.left
                     border-radius: 2rem 0 0 2rem
+        // Between phone and tablet widths the menu is one line of labels, so
+        // its six items don't wrap under their icons.
+        +media-breakpoint-only(sm)
+            .nav-link
+                padding-left: .5rem
+                padding-right: .5rem
+                white-space: nowrap
+                .svg-inline--fa
+                    display: none
         +media-breakpoint-down(xs)
             .navbar-brand
                 padding: .5rem

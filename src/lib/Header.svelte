@@ -1,6 +1,6 @@
 <!-- From IINA's website (source/_header.slim); see LICENSE-IINA. -->
 <script lang="ts">
-  import { faBars, faCommentDots, faFileVideo, faLifeRing, faList } from "@fortawesome/free-solid-svg-icons";
+  import { faBars, faCommentDots, faFileVideo, faLifeRing, faList, faNewspaper } from "@fortawesome/free-solid-svg-icons";
   import { faApple } from "@fortawesome/free-brands-svg-icons";
   import Icon from "./Icon.svelte";
   import { site, url } from "./site.ts";
@@ -34,6 +34,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href={url("/faq")}><Icon icon={faCommentDots} />FAQ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href={url("/blog")}><Icon icon={faNewspaper} />Blog</a>
         </li>
         <li class="nav-item">
           <a class="nav-link stressed" href={site.appStoreUrl}><Icon icon={faApple} />Mac App Store</a>
