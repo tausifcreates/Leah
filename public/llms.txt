@@ -21,6 +21,8 @@ Key facts:
 - [Leah vs IINA](https://leahapp.xyz/leah-vs-iina): Comparison with IINA
 - [Leah vs VLC](https://leahapp.xyz/leah-vs-vlc): Comparison with VLC
 - [MKV has no sound on Mac](https://leahapp.xyz/mkv-no-sound-mac): Why MKV audio is silent and how to fix it
+- [DTS audio on Mac](https://leahapp.xyz/dts-on-mac): Which DTS, DTS-HD and DTS:X tracks play, and why one can be silent
+- [QuickTime can't open MKV](https://leahapp.xyz/quicktime-cant-open-mkv): Three ways to watch MKV files on a Mac
 - [Support](https://leahapp.xyz/support): How to use Leah and fix problems
 - [Privacy Policy](https://leahapp.xyz/privacy): Leah collects no data
 

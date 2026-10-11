@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/Page.astro
 title: Leah vs VLC
+seoTitle: "Leah vs VLC: Which Video Player for Mac Should You Use?"
 description: "Leah vs VLC on the Mac: price, Macs supported, formats, subtitles, seeking, privacy and design compared, and which video player to choose."
 ---
 

@@ -6,7 +6,7 @@ description: "Leah, a Mac video player, plays MKV and WebM with HEVC, VP9 and AV
 
 # Formats Leah plays
 
-Leah is a video player for the Mac. It plays MP4, MOV and M4V files, and every other video file your Mac can play. It also plays MKV (Matroska) and WebM files, which QuickTime Player can't open.
+Leah is a video player for the Mac. It plays MP4, MOV and M4V files, and every other video file your Mac can play. It also plays MKV (Matroska) and WebM files, which [QuickTime Player can't open](quicktime-cant-open-mkv).
 
 ## MKV and WebM at a glance
 

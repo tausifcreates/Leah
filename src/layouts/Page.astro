@@ -6,6 +6,10 @@
 // stylesheet as it was published.
 const { frontmatter, structuredData } = Astro.props;
 const data = structuredData ?? frontmatter.structuredData;
+// seoTitle replaces the whole <title> when "{title} | Leah, a Video Player for
+// Mac" would be too short or too long; noindex is for the 404 page.
+const pageTitle = frontmatter.seoTitle ?? `${frontmatter.title} | Leah, a Video Player for Mac`;
+const noindex = frontmatter.noindex === true;
 const links = [
   ["Home", "/"],
   ["Features", "/features"],
@@ -13,6 +17,9 @@ const links = [
   ["FAQ", "/faq"],
   ["Leah vs IINA", "/leah-vs-iina"],
   ["Leah vs VLC", "/leah-vs-vlc"],
+  ["MKV has no sound", "/mkv-no-sound-mac"],
+  ["DTS on Mac", "/dts-on-mac"],
+  ["QuickTime can't open MKV", "/quicktime-cant-open-mkv"],
   ["Support", "/support"],
   ["Privacy", "/privacy"],
 ];
@@ -21,6 +28,14 @@ const siteTitle = "Leah";
 const description = frontmatter.description;
 const canonical = new URL(Astro.url.pathname.replace(/\.html$/, ""), Astro.site);
 const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
+const breadcrumbs = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Leah", item: new URL(`${base}/`, Astro.site).href },
+    { "@type": "ListItem", position: 2, name: frontmatter.title, item: canonical.href },
+  ],
+};
 ---
 
 <!doctype html>
@@ -29,12 +44,12 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{frontmatter.title} | Leah, a Video Player for Mac</title>
+    <title>{pageTitle}</title>
     <meta property="og:title" content={frontmatter.title} />
     <meta property="og:locale" content="en_US" />
     <meta name="description" content={description} />
     <meta property="og:description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
     <link rel="sitemap" href={`${base}/sitemap-index.xml`} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={siteTitle} />
@@ -48,6 +63,7 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
     <link rel="icon" type="image/png" href={`${base}/logo.png`} />
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(breadcrumbs)} />}
     {data && <script type="application/ld+json" set:html={JSON.stringify(data)} />}
     <link rel="stylesheet" href={`${base}/assets/css/style.css`} />
     <style is:inline>

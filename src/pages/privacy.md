@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/Page.astro
-description: "Leah collects no data and never connects to the internet. Your videos stay on your Mac. Read the Leah privacy policy."
+description: "Leah, the video player for Mac, collects no data, has no accounts, analytics or tracking, and never connects to the internet. Your videos stay on your Mac."
 title: Leah Privacy Policy
 ---
 

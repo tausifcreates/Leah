@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/Page.astro
 title: Leah vs IINA
+seoTitle: "Leah vs IINA: Which Video Player for Mac Should You Use?"
 description: "Leah vs IINA, two Mac video players compared: price, Macs supported, formats, subtitles, seeking, privacy and features, and which one to choose."
 ---
 
