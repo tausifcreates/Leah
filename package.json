@@ -11,7 +11,7 @@
 		"check": "wrangler types --check && svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"gen": "wrangler types",
-		"deploy": "npm run build && wrangler deploy"
+		"deploy": "bun run build && wrangler deploy"
 	},
 	"devDependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.7.2",

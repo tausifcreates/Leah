@@ -57,14 +57,14 @@ the App Store listing.
 ## Work on it
 
 ```sh
-npm install
-npm run dev
+bun install
+bun run dev
 ```
 
 Then open http://localhost:5173/. Pages reload as you save.
 
-`npm run build` makes the finished site in `.svelte-kit/cloudflare/`, and
-`npm run preview` serves it with Wrangler as Cloudflare will, at
+`bun run build` makes the finished site in `.svelte-kit/cloudflare/`, and
+`bun run preview` serves it with Wrangler as Cloudflare will, at
 http://localhost:4173/.
 
 ## Where things are
@@ -106,8 +106,8 @@ both.
 ## Publishing
 
 Cloudflare Workers Builds builds the site and deploys it as the Worker
-`leah-website` on every push to main (build command `npm run build`, deploy
-command `npx wrangler deploy`). `wrangler.jsonc` configures the Worker, and
+`leah-website` on every push to main (build command `bun run build`, deploy
+command `bunx wrangler deploy`), with Bun as the package manager (`bun.lock`). `wrangler.jsonc` configures the Worker, and
 `_headers` sets the security and cache headers Cloudflare sends with the
 files. Every page is a static file, so serving the site is free; only
 addresses with no page run the Worker, to show the 404 page.
