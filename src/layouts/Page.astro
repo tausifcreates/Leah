@@ -51,6 +51,7 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
     {data && <script type="application/ld+json" set:html={JSON.stringify(data)} />}
     <link rel="stylesheet" href={`${base}/assets/css/style.css`} />
     <style is:inline>
+      .site-title { font-size: 2em; font-weight: 600; line-height: 1.25; margin-bottom: 16px; padding-bottom: 0.3em; border-bottom: 1px solid #eaecef; }
       .site-title a { display: inline-flex; align-items: center; gap: 0.35em; }
       .site-title img { height: 1.3em; width: auto; }
       .page-links { margin-top: 3em; padding-top: 1em; border-top: 1px solid #eaecef; font-size: 0.9em; }
@@ -59,7 +60,7 @@ const image = new URL(`${base}/images/og-image.jpg`, Astro.site).href;
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
-      <h1 class="site-title"><a href={`${base}/`}><img src={`${base}/logo.png`} alt="" />{siteTitle}</a></h1>
+      <p class="site-title"><a href={`${base}/`}><img src={`${base}/logo.png`} width="144" height="134" alt="" />{siteTitle}</a></p>
 
       <slot />
 

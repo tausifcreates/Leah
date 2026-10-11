@@ -11,12 +11,9 @@
     "@astrojs/sitemap": "^3.7.4",
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "astro": "^7.3.5",
-    "bootstrap": "^4.6.2",
-    "jquery": "^3.7.1",
-    "popper.js": "^1.16.1"
+    "bootstrap": "^4.6.2"
   },
   "devDependencies": {
     "sass": "^1.105.1"

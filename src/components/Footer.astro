@@ -1,5 +1,7 @@
 ---
 // From IINA's website (source/_footer.slim); see LICENSE-IINA.
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Icon from "./Icon.astro";
 import { site, url } from "../site";
 ---
 
@@ -10,7 +12,7 @@ import { site, url } from "../site";
         <span>Leah, a fast video player for the Mac</span>
       </div>
       <div class="right">
-        <span class="fab fa-github mr-2"></span>
+        <Icon icon={faGithub} class="mr-2" />
         <a href={site.supportUrl}>Report a problem</a>
       </div>
     </div>

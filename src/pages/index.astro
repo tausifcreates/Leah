@@ -1,6 +1,9 @@
 ---
 // Laid out like IINA's home page (source/localizable/index.html.slim); see LICENSE-IINA.
 import Layout from "../layouts/Layout.astro";
+import { faAngleRight, faClosedCaptioning, faFileVideo, faLifeRing, faLock, faVolumeHigh } from "@fortawesome/free-solid-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
+import Icon from "../components/Icon.astro";
 import { site, url, canonicalUrl } from "../site";
 
 const title = "Leah: Fast Video Player for Mac That Plays MKV";
@@ -54,14 +57,14 @@ const structuredData = {
     </div>
     <div class="container position-relative">
       <div class="sample-image">
-        <img src={url("/images/shot-hero.webp")} alt="Leah playing a video, with the timeline and volume controls showing" />
+        <img src={url("/images/shot-hero.webp")} width="2000" height="1255" fetchpriority="high" alt="Leah playing a video, with the timeline and volume controls showing" />
       </div>
       <div class="small-headline">/ˈliːə/</div>
       <h1 class="headline">Leah</h1>
       <p class="sub-headline">The&nbsp;<span class="modern">fast</span>&nbsp;video player for Mac.</p>
 
       <div class="download">
-        <a class="dl-btn dmg" href={site.appStoreUrl}><span class="fab fa-apple"></span>&nbsp;Mac App Store<span class="light">v{site.version}</span></a>
+        <a class="dl-btn dmg" href={site.appStoreUrl}><Icon icon={faApple} />&nbsp;Mac App Store<span class="light">v{site.version}</span></a>
       </div>
       <p class="requirement">{site.requirement}</p>
       <p class="other-downloads"><a href={url("/features")}>See everything Leah does</a></p>
@@ -87,7 +90,7 @@ const structuredData = {
           </div>
           <div class="right">
             <div class="item-img">
-              <img src={url("/images/shot-scrub.webp")} width="800" alt="A preview picture above Leah's timeline, showing the moment under the pointer" />
+              <img src={url("/images/shot-scrub.webp")} width="800" height="502" loading="lazy" alt="A preview picture above Leah's timeline, showing the moment under the pointer" />
             </div>
           </div>
         </div>
@@ -102,7 +105,7 @@ const structuredData = {
           </div>
           <div class="left">
             <div class="item-img">
-              <img src={url("/images/shot-watch.webp")} width="800" alt="A video playing in Leah with the controls hidden" />
+              <img src={url("/images/shot-watch.webp")} width="800" height="502" loading="lazy" alt="A video playing in Leah with the controls hidden" />
             </div>
           </div>
         </div>
@@ -146,27 +149,27 @@ const structuredData = {
       </div>
       <div class="items mb-4">
         <div class="item">
-          <div class="item-icon"><span class="fas fa-file-video fa-2x m-0"></span></div>
+          <div class="item-icon"><Icon icon={faFileVideo} class="fa-2x m-0" /></div>
           <div class="item-text">MKV &amp; WebM</div>
         </div>
         <div class="item">
-          <div class="item-icon"><span class="fas fa-volume-high fa-2x m-0"></span></div>
+          <div class="item-icon"><Icon icon={faVolumeHigh} class="fa-2x m-0" /></div>
           <div class="item-text">Lossless 7.1 sound</div>
         </div>
         <div class="item">
-          <div class="item-icon"><span class="fas fa-closed-captioning fa-2x m-0"></span></div>
+          <div class="item-icon"><Icon icon={faClosedCaptioning} class="fa-2x m-0" /></div>
           <div class="item-text">PGS, VobSub &amp; SRT</div>
         </div>
       </div>
       <div class="content">
-        <a href={url("/formats")}>Formats Leah plays<span class="fas fa-angle-right ml-2"></span></a>
+        <a href={url("/formats")}>Formats Leah plays<Icon icon={faAngleRight} class="ml-2" /></a>
       </div>
     </div>
   </section>
 
   <section class="highlight highlight--opensource">
     <div class="container">
-      <div class="swift-bg"><img src={url("/images/swift.svg")} alt="" /></div>
+      <div class="swift-bg"><img src={url("/images/swift.svg")} width="600" height="540" loading="lazy" alt="" /></div>
       <div class="content">
         <h2>Private, and simple to use.</h2>
         <div class="row">
@@ -175,7 +178,7 @@ const structuredData = {
               Leah doesn't collect any data and never connects to the internet. Your videos stay on your Mac. It has no
               accounts, no analytics, no advertising and no tracking.
             </p>
-            <a class="highlight-link" href={url("/privacy")}><span class="fas fa-lock"></span><span class="mr-2">Privacy Policy</span><span class="fa fa-angle-right"></span></a>
+            <a class="highlight-link" href={url("/privacy")}><Icon icon={faLock} /><span class="mr-2">Privacy Policy</span><Icon icon={faAngleRight} /></a>
           </div>
           <div class="col-sm">
             <p>
@@ -183,7 +186,7 @@ const structuredData = {
               video player with one click. The support page covers subtitles, formats and what to do if a video won't
               play.
             </p>
-            <a class="highlight-link" href={url("/support")}><span class="fas fa-life-ring"></span><span class="mr-2">Support</span><span class="fa fa-angle-right"></span></a>
+            <a class="highlight-link" href={url("/support")}><Icon icon={faLifeRing} /><span class="mr-2">Support</span><Icon icon={faAngleRight} /></a>
           </div>
         </div>
       </div>

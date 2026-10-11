@@ -1,12 +1,15 @@
 ---
 // From IINA's website (source/_header.slim); see LICENSE-IINA.
+import { faBars, faCommentDots, faFileVideo, faLifeRing, faList } from "@fortawesome/free-solid-svg-icons";
+import { faApple } from "@fortawesome/free-brands-svg-icons";
+import Icon from "./Icon.astro";
 import { site, url } from "../site";
 ---
 
 <div id="header">
   <nav class="navbar navbar-light navbar-expand-sm">
     <a class="navbar-brand" href={url("/")}>
-      <img src={url("/images/logo.png")} alt="" />
+      <img src={url("/images/logo.png")} width="192" height="179" alt="" />
       <span class="ml-2">Leah</span>
     </a>
     <button
@@ -14,29 +17,27 @@ import { site, url } from "../site";
       aria-controls="navbarSupportedContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
-      data-target="#navbarSupportedContent"
-      data-toggle="collapse"
       type="button"
     >
-      <span class="fas fa-bars"></span>
+      <Icon icon={faBars} />
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href={url("/features")}><span class="fas fa-list"></span>Features</a>
+          <a class="nav-link" href={url("/features")}><Icon icon={faList} />Features</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href={url("/support")}><span class="fas fa-life-ring"></span>Support</a>
+          <a class="nav-link" href={url("/support")}><Icon icon={faLifeRing} />Support</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href={url("/formats")}><span class="fas fa-file-video"></span>Formats</a>
+          <a class="nav-link" href={url("/formats")}><Icon icon={faFileVideo} />Formats</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href={url("/faq")}><span class="fas fa-comment-dots"></span>FAQ</a>
+          <a class="nav-link" href={url("/faq")}><Icon icon={faCommentDots} />FAQ</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link stressed" href={site.appStoreUrl}><span class="fab fa-apple"></span>Mac App Store</a>
+          <a class="nav-link stressed" href={site.appStoreUrl}><Icon icon={faApple} />Mac App Store</a>
         </li>
       </ul>
     </div>

@@ -3,6 +3,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { site, url, canonicalUrl } from "../site";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../styles/index.sass";
 
 interface Props {
@@ -49,7 +50,9 @@ const image = new URL(url("/images/og-image.jpg"), Astro.site).href;
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
     <!-- assets -->
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&amp;subset=latin-ext" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&amp;subset=latin-ext&amp;display=swap" rel="stylesheet" />
   </head>
   <body class={htmlClass}>
     <Header />

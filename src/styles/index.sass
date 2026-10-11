@@ -4,6 +4,11 @@ html, body
     margin: 0
     padding: 0
 
+// Images carry width and height so the page doesn't jump as they load; this
+// keeps them in proportion when a rule sets only their width.
+:where(img)
+    height: auto
+
 html
     +media-breakpoint-down(md)
         font-size: 15px
