@@ -36,4 +36,4 @@ See also [MKV has no sound on Mac](mkv-no-sound-mac).
 
 ## Get Leah
 
-Leah is a video player for Macs with Apple silicon and macOS 15 or later. It also plays Dolby TrueHD in up to 7.1 channels, Dolby Digital and Dolby Digital Plus. Get it on the [Mac App Store](https://apps.apple.com/app/id6816698102).
+Leah is a video player for Macs with Apple silicon and macOS 15 or later. It also plays [Dolby TrueHD](dolby-truehd-atmos-mac) in up to 7.1 channels, Dolby Digital and Dolby Digital Plus. Get it on the [Mac App Store](https://apps.apple.com/app/id6816698102).

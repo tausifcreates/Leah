@@ -36,7 +36,7 @@ Leah is a video player for the Mac. It plays MP4, MOV and M4V files, and every o
 
 | Format | Plays in Leah | Notes |
 |---|---|---|
-| Dolby TrueHD | Yes | Up to 7.1 channels, exactly as recorded. Dolby Atmos tracks play as 7.1, with sounds from above mixed into the other channels |
+| Dolby TrueHD | Yes | Up to 7.1 channels, exactly as recorded. Dolby Atmos tracks play as 7.1, with sounds from above mixed into the other channels. See [TrueHD and Atmos on Mac](dolby-truehd-atmos-mac) |
 | Dolby Digital (AC-3) | Yes | 5.1 surround |
 | Dolby Digital Plus (E-AC-3) | Yes | |
 | DTS | Yes | Up to 5.1 channels. DTS-HD and DTS:X tracks play their 5.1 DTS core |
@@ -54,7 +54,7 @@ If an MKV file has more than one audio track, Leah plays the one the file marks 
 | SRT | Yes | In the file, or as a separate .srt file |
 | ASS/SSA | Yes | Keeps italic, bold and underlined text and the subtitle's position, but not fonts, colors or animation |
 | WebVTT | Yes | In the file, or as a separate .vtt file |
-| PGS (Blu-ray) | Yes | Picture subtitles |
+| PGS (Blu-ray) | Yes | Picture subtitles. See [PGS and VobSub subtitles on Mac](pgs-vobsub-subtitles-mac) |
 | VobSub (DVD) | Yes | Picture subtitles |
 | MP4 text subtitles | Yes | |
 
