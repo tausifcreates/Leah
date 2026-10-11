@@ -5,6 +5,7 @@ export const site = {
   name: "Leah",
   appStoreName: "Leah: Modern Fast Video Player",
   appStoreUrl: "https://apps.apple.com/app/id6816698102",
+  wikidataUrl: "https://www.wikidata.org/wiki/Q141696867",
   author: "Tausif Khan",
   version: "4.0",
   price: "9.99",
