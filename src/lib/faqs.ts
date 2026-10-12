@@ -1,0 +1,91 @@
+import { site, url } from "./site.ts";
+
+export interface Faq {
+  q: string;
+  a: string;
+  /** Links shown after the answer on the page: [address, text]. */
+  link?: [string, string];
+  link2?: [string, string];
+}
+
+// Each answer is plain text, so it reads the same on the page and in the
+// structured data. Links follow some answers on the page only.
+export const faqs: Faq[] = [
+  {
+    q: "What is Leah?",
+    a: "Leah is a video player for the Mac, made by Tausif Khan. It was built from the ground up for instant seeking and scrubbing. It plays MP4, MOV and M4V files, and MKV and WebM files with lossless surround sound and Blu-ray and DVD subtitles.",
+  },
+  {
+    q: "How much does Leah cost?",
+    a: `Leah costs $${site.price} on the Mac App Store.`,
+    link: [site.appStoreUrl, "Leah on the Mac App Store"],
+  },
+  {
+    q: "Which Macs does Leah run on?",
+    a: "Leah runs on Macs with Apple silicon (M1 or later) with macOS 15 or later. It doesn't run on Intel Macs.",
+  },
+  {
+    q: "Does Leah play MKV files?",
+    a: "Yes. Leah plays MKV (Matroska) and WebM files with H.264, HEVC (H.265), MPEG-2, MPEG-1, VP9 and AV1 video. VP9 plays on Macs with Apple silicon, and AV1 on Macs with Apple M3 or later.",
+    link: [url("/play-mkv-on-mac"), "How to play MKV files on Mac"],
+    link2: [url("/formats"), "Formats Leah plays"],
+  },
+  {
+    q: "Does Leah show PGS (Blu-ray) and VobSub (DVD) subtitles?",
+    link: [url("/pgs-vobsub-subtitles-mac"), "PGS and VobSub subtitles on Mac"],
+    a: "Yes. Leah shows PGS and VobSub picture subtitles, and SRT, ASS/SSA, WebVTT and MP4 text subtitles. A subtitle file next to the video with the same name shows up on its own, and you can drag any other SRT, WebVTT, ASS or SSA file onto the video.",
+  },
+  {
+    q: "Does Leah play Dolby TrueHD and Dolby Atmos?",
+    link: [url("/dolby-truehd-atmos-mac"), "Dolby TrueHD and Atmos on Mac"],
+    a: "Yes. Leah plays Dolby TrueHD in up to 7.1 channels, exactly as it was recorded. Tracks with Dolby Atmos play as 7.1, with sounds from above mixed into the other channels.",
+  },
+  {
+    q: "Does Leah play DTS and Dolby Digital audio?",
+    link: [url("/dts-on-mac"), "DTS audio on Mac"],
+    a: "Yes. Leah plays DTS in up to 5.1 channels, and Dolby Digital (AC-3) and Dolby Digital Plus (E-AC-3). DTS-HD and DTS:X tracks play their 5.1 DTS core. DTS Express commentary tracks and Vorbis audio aren't supported.",
+  },
+  {
+    q: "How fast does Leah seek?",
+    a: "In Leah's own tests on 1080p to 4K videos, on a Mac with Apple M1 Pro, a 5-second skip shows the new picture in about 30 milliseconds (the median). Files with long gaps between keyframes, as in some 4K recordings, can take longer. Holding an arrow key keeps skipping, and dragging along the timeline moves the picture with the pointer.",
+  },
+  {
+    q: "Does Leah collect data or connect to the internet?",
+    a: "No. Leah doesn't collect any data and never connects to the internet. It has no accounts, analytics, advertising or tracking. Your videos stay on your Mac.",
+    link: [url("/privacy"), "Leah Privacy Policy"],
+  },
+  {
+    q: "Can I make Leah my default video player?",
+    a: "Yes. Click Make Leah your default video player at the bottom of Leah's start screen, and confirm when macOS asks.",
+  },
+  {
+    q: "Does Leah have Picture in Picture, playlists or plugins?",
+    a: "No. Leah plays one video at a time and keeps its settings few, by design.",
+  },
+  {
+    q: "Is Leah related to Leawo?",
+    a: "No. Leah, the video player for Mac on the Mac App Store, isn't related to Leawo or its Blu-ray and media players.",
+  },
+  {
+    q: "How is Leah different from IINA and VLC?",
+    a: "IINA and VLC are free and open source, run on Intel Macs and older macOS versions, and play more formats. Leah is a paid Mac App Store app for Apple silicon, built for instant seeking, with few settings, and it never connects to the internet.",
+    link: [url("/leah-vs-iina"), "Leah vs IINA"],
+    link2: [url("/leah-vs-vlc"), "Leah vs VLC"],
+  },
+  {
+    q: "How is Leah different from Infuse and Elmedia Player?",
+    a: "Infuse builds a library of movies and shows across Mac, iPhone, iPad and Apple TV, with a subscription or one-time purchase for its Pro features. Elmedia Player has a free version, runs on Intel Macs, and its PRO version streams to TVs. Leah is a $9.99 video player for Apple silicon Macs that opens files directly, is built for instant seeking, and never connects to the internet.",
+    link: [url("/leah-vs-infuse"), "Leah vs Infuse"],
+    link2: [url("/leah-vs-elmedia"), "Leah vs Elmedia Player"],
+  },
+  {
+    q: "What are the alternatives to IINA on Mac?",
+    a: "The main alternatives to IINA are VLC, Infuse, Elmedia Player, Movist Pro, mpv and Leah. VLC and mpv are free and open source; Infuse is best for a media library; Elmedia Player streams to TVs; Leah is built for fast seeking and Blu-ray rips.",
+    link: [url("/iina-alternatives"), "IINA alternatives for Mac"],
+  },
+  {
+    q: "How do I get help with Leah?",
+    a: "Choose Help > Leah Help in the app, see the support page, or open an issue on GitHub.",
+    link: [url("/support"), "Leah Support"],
+  },
+];

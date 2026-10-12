@@ -72,23 +72,9 @@ export default defineConfig({
     __LASTMOD__: JSON.stringify(dates.lastmod),
     __CREATED__: JSON.stringify(dates.created),
   },
-  css: {
-    preprocessorOptions: {
-      // IINA's styles and Bootstrap 4 are written for an older Sass; today's
-      // Sass builds them the same but warns about each old form.
-      sass: {
-        quietDeps: true,
-        silenceDeprecations: ["import", "global-builtin", "color-functions", "slash-div", "abs-percent"],
-      },
-      scss: {
-        quietDeps: true,
-        silenceDeprecations: ["import", "global-builtin", "color-functions", "slash-div", "abs-percent"],
-      },
-    },
-  },
   plugins: [
     markdown(),
-    // Tailwind is used only by the blog page (src/routes/blog/blog.css).
+    // Every page is styled with Tailwind (src/styles/tailwind.css).
     tailwindcss(),
     sveltekit({
       compilerOptions: {

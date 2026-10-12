@@ -16,29 +16,6 @@ export const site = {
   supportUrl: "https://github.com/tausifcreates/Leah/issues",
 };
 
-/** The links at the foot of the text pages and the blog. */
-export const pageLinks: [string, string][] = [
-  ["Home", "/"],
-  ["Features", "/features"],
-  ["Formats", "/formats"],
-  ["Fast seeking", "/fast-seeking-video-player-mac"],
-  ["FAQ", "/faq"],
-  ["Blog", "/blog"],
-  ["Play MKV on Mac", "/play-mkv-on-mac"],
-  ["IINA alternatives", "/iina-alternatives"],
-  ["Leah vs IINA", "/leah-vs-iina"],
-  ["Leah vs VLC", "/leah-vs-vlc"],
-  ["Leah vs Infuse", "/leah-vs-infuse"],
-  ["Leah vs Elmedia", "/leah-vs-elmedia"],
-  ["MKV has no sound", "/mkv-no-sound-mac"],
-  ["TrueHD and Atmos on Mac", "/dolby-truehd-atmos-mac"],
-  ["DTS on Mac", "/dts-on-mac"],
-  ["PGS and VobSub subtitles", "/pgs-vobsub-subtitles-mac"],
-  ["QuickTime can't open MKV", "/quicktime-cant-open-mkv"],
-  ["Support", "/support"],
-  ["Privacy", "/privacy"],
-];
-
 /** A path on the site, such as "/features". */
 export function url(path: string): string {
   return `/${path.replace(/^\//, "")}`;

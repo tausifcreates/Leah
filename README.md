@@ -4,18 +4,33 @@ The website for Leah, a video player for the Mac: https://leahapp.xyz/
 
 ## About this site
 
-It's built with [SvelteKit](https://svelte.dev/docs/kit) and published on
-Cloudflare Workers, from the code of
-[IINA's website](https://github.com/iina/iina-website) (master branch, June
-2026), used under the MIT License (see `LICENSE-IINA`).
+It's built with [SvelteKit](https://svelte.dev/docs/kit) and
+[Tailwind CSS](https://tailwindcss.com), and published on Cloudflare Workers.
+Every page is built to HTML ahead of time and ships no JavaScript from
+SvelteKit.
 
-IINA's stylesheets in `src/styles/` are unchanged apart from the Bootstrap
-import path and the heading levels they style. The home and features pages
-keep the layout of IINA's, converted from Slim into Svelte files in `src/`,
-with Leah's own text, written from its App Store description. Its script is
-`src/lib/menu.js`, which opens the header menu on narrow screens. Every page
-is built to HTML ahead of time and ships no JavaScript from SvelteKit. Like IINA's site, it uses Bootstrap 4, jQuery, Font Awesome and Rubik
-from Google Fonts.
+Every page is styled with Tailwind from one stylesheet,
+`src/styles/tailwind.css`, which holds the site's colors, fonts and
+breakpoints. Every page uses `src/lib/tw/Layout.svelte` for its head tags,
+header and footer. The text pages (the FAQ, formats, support and privacy
+pages, the guides and the 404 page) go through `src/lib/PageLayout.svelte`,
+which sets their Markdown with Tailwind's typography plugin.
+
+The home page and the blog are laid out like
+[Elmedia Player's site](https://www.elmedia-video-player.com/), rebuilt from
+the computed styles of its home page (sizes, spacing, colors, radii and its
+breakpoints, read in the browser's developer tools), in Leah's own words and
+screenshots. Elmedia's reviews and press logos are left out. The top of the
+home page and the features page are rebuilt from the computed styles of
+[IINA's website](https://github.com/iina/iina-website), which this site was
+first made from, used under the MIT License (see `LICENSE-IINA`). The home
+page's questions come from `src/lib/faqs.ts`, which the FAQ page also uses.
+
+Every page uses the fonts built into Apple devices, named in CSS rather than
+shipped (Apple's licences don't allow serving them): SF Pro for text
+(`-apple-system`) and New York for headings (`ui-serif`, `"New York"`).
+Other systems fall back to their own: Segoe UI or Roboto for text, and
+Georgia, Palatino or Times for headings.
 
 ## Search and link previews
 
@@ -41,8 +56,7 @@ the page shown, with a 404 status, for any missing address; it's marked noindex
 and left out of the sitemap. The screenshots each have a 1000-pixel copy
 (`shot-*-1000.webp`, made with `cwebp -q 82 -resize 1000 0`) for `srcset`.
 `/blog` (`src/routes/blog/`) lists the guides and comparisons as cards, newest
-first, laid out like Efferd's blogs-3 block and styled with Tailwind, which only
-that page loads (`src/routes/blog/blog.css`). The list is in `src/lib/blog.ts`;
+first, as cards laid out like Efferd's blogs-3 block. The list is in `src/lib/blog.ts`;
 each card takes its title and description from the page's front matter, its
 date from the page's first commit and its read time from its word count. The
 covers in `static/blog/covers/` are made from the players' official icons
@@ -81,12 +95,10 @@ http://localhost:4173/.
 | What | Where | From IINA's |
 | --- | --- | --- |
 | App Store link, version, price and requirement | `src/lib/site.ts` | `data/versions.yml` |
-| Page frame | `src/lib/MainLayout.svelte` | `source/layouts/layout.slim` |
-| Header, footer | `src/lib/Header.svelte`, `src/lib/Footer.svelte` | `source/_header.slim`, `_footer.slim` |
-| Home page | `src/routes/+page.svelte` | `source/localizable/index.html.slim` |
+| Head tags, header and footer | `src/lib/tw/Layout.svelte`, `src/lib/tw/Header.svelte`, `src/lib/tw/Footer.svelte` | |
 | Features | `src/routes/features/+page.svelte` | `source/localizable/features.html.slim` |
 | Privacy policy, support, guides | `src/content/*.md` | |
-| Styles | `src/styles/` | `assets/stylesheets/` |
+| Styles | `src/styles/tailwind.css` | |
 | Pictures | `static/images/` | `source/images/` |
 
 ## Pictures to replace
@@ -95,12 +107,10 @@ http://localhost:4173/.
 | --- | --- | --- |
 | `shot-hero.webp` | Leah App Store screenshot | Top of the home page, Features page |
 | `og-image.jpg` | `shot-hero.webp` on a dark background, 1200 × 630 | Link previews |
-| `shot-scrub.webp`, `shot-watch.webp` | Leah App Store screenshots | Timeline Preview and Out of the Way on the home page, Features page |
-| `shot-preview.webp`, `shot-play.webp`, `shot-open.webp` | Leah App Store screenshots | Features page |
+| `shot-scrub.webp`, `shot-preview.webp`, `shot-watch.webp` | Leah App Store screenshots | The seeking cards on the home page, Features page |
+| `shot-play.webp`, `shot-open.webp` | Leah App Store screenshots | Playback and download sections of the home page, Features page |
+| `mac-app-store-badge.svg` | Apple's black "Download on the Mac App Store" badge, from developer.apple.com/app-store/marketing/guidelines | Download buttons on the home page |
 | `logo.png` | Leah's start-screen logo from the app, 192 pixels wide | Header, browser icons |
-| `swift.svg` | IINA's artwork (the Swift logo) | Behind the privacy section |
-| `text-bg*.png` | IINA's artwork | The picture-filled headings ("fast", feature names, More Features) |
-| `index-bg.svg` | IINA's artwork | The pattern behind the dark features section |
 
 Keep the same file names, or change them in the pages and styles.
 
@@ -108,9 +118,8 @@ Keep the same file names, or change them in the pages and styles.
 
 `/privacy` and `/support` are the privacy policy and support pages this
 repository published before, with GitHub Pages' Jekyll and Primer theme. Their
-text is unchanged, and `src/lib/PageLayout.svelte` and
-`static/assets/css/style.css` keep their look. Leah's App Store page links to
-both.
+text is unchanged; they now share the site's layout. Leah's App Store page
+links to both.
 
 ## Publishing
 

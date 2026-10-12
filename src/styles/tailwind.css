@@ -1,0 +1,90 @@
+/* The site's one stylesheet: Tailwind, with the typography plugin for the
+   Markdown pages. The home page's sections use the computed values of
+   Elmedia Player's site (elmedia-video-player.com) and of the live site's
+   IINA layout, read in the browser's developer tools. */
+@import "tailwindcss" source(none);
+@source "../lib";
+@source "../routes";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Elmedia's breakpoints. */
+  --breakpoint-xs: 481px;
+  --breakpoint-sm: 577px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+
+  /* SF Pro for text and New York for headings on Apple devices, which have
+     them built in; other systems use their own fonts. */
+  --font-sans: -apple-system, BlinkMacSystemFont, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-serif: ui-serif, "New York", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, Cambria, "Times New Roman", serif;
+
+  --color-heading: #222529;
+  --color-body: #2f2f2f;
+  --color-copy: #454a52;
+  --color-nav: #707980;
+  --color-subtle: #909090;
+  --color-peach: #ffe0ca;
+  --color-panel: #f2f2f2;
+  --color-mist: #eff3f3;
+  --color-night: #1b1b1b;
+  --color-orange: #f16d27;
+  --color-gold: #ff9d00;
+  --color-sky: #0088d3;
+
+  /* The blog's colors. */
+  --color-foreground: #24292e;
+  --color-muted: #f6f8fa;
+  --color-muted-foreground: #6a737d;
+  --color-border: #e1e4e8;
+  --color-accent: #eef1f4;
+  --color-link: #0366d6;
+}
+
+
+/* The other pages are light whatever the system's appearance; so are these. */
+@layer base {
+  html {
+    color-scheme: light;
+    background-color: #fff;
+  }
+}
+
+/* A card heading's gradient line, 20px below it. */
+@utility card-heading {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 120px;
+    height: 2px;
+    background-image: linear-gradient(90deg, #ea27f1 0%, #ff8a10 100%);
+  }
+  @media (width < 768px) {
+    &::after {
+      bottom: -10px;
+    }
+  }
+}
+
+/* The blurred orange-to-purple light on the dark download block. */
+@utility glow-download {
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -227px -350px -161px 499px;
+    background-image: linear-gradient(195.15deg, #ff9100 28.06%, #8e1dff 84.05%);
+    filter: blur(150px);
+  }
+  @media (width < 577px) {
+    &::before {
+      inset: 268px auto auto auto;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(195.15deg, #f96b3f 46.59%, #8e1dff 84.05%);
+      filter: blur(100px);
+    }
+  }
+}
