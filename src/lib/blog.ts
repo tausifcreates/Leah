@@ -1,4 +1,4 @@
-import { site, type MarkdownPage } from "./site.ts";
+import { canonicalUrl, site, type MarkdownPage } from "./site.ts";
 
 // The guides and comparisons listed on the blog, in this order when they
 // were added at the same time. Each is a Markdown page in src/content.
@@ -24,6 +24,8 @@ export interface Post {
   author: string;
   /** When the page was first published, from git. */
   createdAt: string;
+  /** When the page last changed, from git. */
+  updatedAt: string;
   readTime: string;
 }
 
@@ -45,6 +47,7 @@ export const posts: Post[] = slugs
       description: page.frontmatter.description,
       author: site.author,
       createdAt: __CREATED__[`/${slug}`] ?? new Date().toISOString(),
+      updatedAt: __LASTMOD__[`/${slug}`] ?? new Date().toISOString(),
       readTime: readTime(page.html),
     };
   })
@@ -52,3 +55,18 @@ export const posts: Post[] = slugs
 
 /** A post's cover picture, made by design/make-blog-covers.swift. */
 export const coverUrl = (slug: string) => `/blog/covers/${slug}.webp`;
+
+/** A post's structured data: the BlogPosting the blog lists, and the one on its own page. */
+export const postData = (post: Post) => ({
+  "@type": "BlogPosting",
+  headline: post.title,
+  description: post.description,
+  url: canonicalUrl(`/${post.slug}`),
+  mainEntityOfPage: canonicalUrl(`/${post.slug}`),
+  image: canonicalUrl(coverUrl(post.slug)),
+  datePublished: post.createdAt,
+  dateModified: post.updatedAt,
+  author: { "@type": "Person", name: post.author },
+  publisher: { "@type": "Person", name: post.author },
+  about: { "@type": "SoftwareApplication", name: site.name, url: canonicalUrl("/") },
+});

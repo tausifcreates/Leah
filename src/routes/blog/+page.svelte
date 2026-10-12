@@ -6,7 +6,7 @@
 <script lang="ts">
   import Layout from "#lib/tw/Layout.svelte";
   import { url, canonicalUrl } from "#lib/site.ts";
-  import { posts, coverUrl } from "#lib/blog.ts";
+  import { posts, coverUrl, postData } from "#lib/blog.ts";
 
   const title = "Leah Blog: Guides to Playing Video on a Mac";
   const description =
@@ -28,15 +28,7 @@
         name: "Leah Blog",
         url: canonical,
         description,
-        blogPost: posts.map((post) => ({
-          "@type": "BlogPosting",
-          headline: post.title,
-          description: post.description,
-          url: canonicalUrl(`/${post.slug}`),
-          image: canonicalUrl(coverUrl(post.slug)),
-          datePublished: post.createdAt,
-          author: { "@type": "Person", name: post.author },
-        })),
+        blogPost: posts.map(postData),
       },
     ],
   };
