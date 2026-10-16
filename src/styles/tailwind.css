@@ -88,3 +88,136 @@
     }
   }
 }
+
+/* The guides and comparisons, laid out like a story on Medium (medium.com)
+   with the computed values of its article pages. Medium's fonts, Sohne and
+   Source Serif, give way to the fonts Medium itself falls back on. Medium
+   tightens each paragraph's space below by most of a line, so the space
+   between two blocks is set by the second one's top margin. */
+@layer components {
+  .story {
+    --story-sans: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #242424;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: -0.003em;
+    overflow-wrap: break-word;
+
+    & h1 {
+      margin: 0 0 32px;
+      font-family: var(--story-sans);
+      font-size: 42px;
+      line-height: 52px;
+      font-weight: 700;
+      letter-spacing: -0.011em;
+    }
+    & h2 {
+      margin: 1.95em 0 -0.28em;
+      font-family: var(--story-sans);
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 600;
+      letter-spacing: -0.016em;
+    }
+    & p {
+      margin: 2.14em 0 -0.46em;
+    }
+    & ul,
+    & ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    & li {
+      margin: 1.14em 0 -0.46em 30px;
+      list-style-type: disc;
+    }
+    & ol > li {
+      list-style-type: decimal;
+    }
+    & h2 + p,
+    & h2 + :is(ul, ol) > li:first-child {
+      margin-top: 0.94em;
+    }
+    & p + :is(ul, ol) > li:first-child {
+      margin-top: 2.14em;
+    }
+    & a {
+      color: inherit;
+      text-decoration: underline;
+    }
+    & strong {
+      font-weight: 700;
+    }
+    & code {
+      padding: 3px 4px;
+      background-color: #f2f2f2;
+      font-family: source-code-pro, Menlo, Monaco, "Courier New", Courier, monospace;
+      font-size: 75%;
+    }
+    /* Medium has no tables; these are in its sans-serif type, ruled in the
+       grey of its dividers. */
+    /* Spaced as a paragraph is, by the body text's size, not the table's. */
+    & table {
+      width: 100%;
+      margin-top: 42.8px;
+      border-collapse: collapse;
+      font-family: var(--story-sans);
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: normal;
+    }
+    & th,
+    & td {
+      padding: 10px 12px 10px 0;
+      border-bottom: 1px solid #f2f2f2;
+      text-align: left;
+      vertical-align: top;
+    }
+    & th {
+      font-weight: 600;
+    }
+    & h2 + table {
+      margin-top: 18.8px;
+    }
+
+    @media (width < 728px) {
+      font-size: 18px;
+      line-height: 28px;
+
+      & h1 {
+        margin-bottom: 24px;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: -0.014em;
+      }
+      & h2 {
+        margin-top: 1.2em;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: normal;
+      }
+      & p,
+      & p + :is(ul, ol) > li:first-child {
+        margin-top: 1.56em;
+      }
+      /* A table too wide for a phone scrolls sideways, not the page. */
+      & table {
+        display: block;
+        overflow-x: auto;
+        margin-top: 28.08px;
+      }
+      & li {
+        margin-top: 1.34em;
+      }
+      & h2 + p,
+      & h2 + :is(ul, ol) > li:first-child {
+        margin-top: 0.67em;
+      }
+      & h2 + table {
+        margin-top: 12.06px;
+      }
+    }
+  }
+}

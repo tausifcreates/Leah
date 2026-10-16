@@ -13,12 +13,15 @@
     frontmatter,
     structuredData,
     path,
+    story = false,
     children,
   }: {
     frontmatter: MarkdownPage["frontmatter"];
     structuredData?: object;
     /** The page's path, when it isn't the address being shown (the 404 page). */
     path?: string;
+    /** A guide or comparison, laid out like a Medium story (the .story styles). */
+    story?: boolean;
     children: Snippet;
   } = $props();
 
@@ -38,11 +41,20 @@
 </script>
 
 <Layout title={pageTitle} description={frontmatter.description} shareTitle={frontmatter.title} structuredData={jsonLd} {path} {noindex}>
-  <div class="mx-auto max-w-[970px] px-[15px] pt-[60px] pb-[100px] max-md:pt-[30px] max-md:pb-[50px]">
-    <article
-      class="prose prose-lg mx-auto max-w-[820px] text-copy prose-headings:font-serif prose-headings:text-heading prose-h1:text-[44px] prose-h1:leading-[1.32] prose-h1:font-black prose-h2:mt-12 prose-h2:font-bold prose-a:text-[#037ae3] prose-a:no-underline hover:prose-a:underline prose-strong:text-heading prose-th:text-heading prose-table:text-base max-md:prose-h1:text-[32px]"
-    >
-      {@render children()}
-    </article>
-  </div>
+  {#if story}
+    <!-- Medium's 680px column, 24px from the window's edges on phones. -->
+    <div class="mx-auto max-w-[728px] px-6 pt-[30px] pb-[100px] max-md:pb-[50px]">
+      <article class="story">
+        {@render children()}
+      </article>
+    </div>
+  {:else}
+    <div class="mx-auto max-w-[970px] px-[15px] pt-[60px] pb-[100px] max-md:pt-[30px] max-md:pb-[50px]">
+      <article
+        class="prose prose-lg mx-auto max-w-[820px] text-copy prose-headings:font-serif prose-headings:text-heading prose-h1:text-[44px] prose-h1:leading-[1.32] prose-h1:font-black prose-h2:mt-12 prose-h2:font-bold prose-a:text-[#037ae3] prose-a:no-underline hover:prose-a:underline prose-strong:text-heading prose-th:text-heading prose-table:text-base max-md:prose-h1:text-[32px]"
+      >
+        {@render children()}
+      </article>
+    </div>
+  {/if}
 </Layout>
