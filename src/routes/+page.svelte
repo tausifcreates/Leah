@@ -26,6 +26,7 @@
       { "@type": "WebSite", name: site.name, alternateName: "Leah video player", url: home },
       {
         "@type": "SoftwareApplication",
+        "@id": `${home}#app`,
         name: site.name,
         alternateName: [site.appStoreName, "Leah video player", "Leah for Mac"],
         description,
@@ -49,6 +50,22 @@
         screenshot: canonicalUrl(url("/images/og-image.jpg")),
         author: { "@type": "Person", name: site.author },
         offers: { "@type": "Offer", price: site.price, priceCurrency: site.currency, url: site.appStoreUrl },
+      },
+      // The hero's demo. Phones, which Google crawls as, don't load it, so
+      // its file is named here.
+      {
+        "@type": "VideoObject",
+        name: "Leah video player demo",
+        description:
+          "Leah opening a video on a Mac, previewing the timeline while scrubbing, skipping through the video instantly, and playing it full screen.",
+        thumbnailUrl: [canonicalUrl(url("/images/demo-thumbnail.jpg")), canonicalUrl(url("/images/demo-poster.webp"))],
+        uploadDate: "2026-10-16T08:50:00+06:00",
+        duration: "PT30S",
+        contentUrl: canonicalUrl(url("/images/demo-vp9.webm")),
+        encodingFormat: "video/webm",
+        width: 1600,
+        height: 900,
+        about: { "@id": `${home}#app` },
       },
     ],
   };
