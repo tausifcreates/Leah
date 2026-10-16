@@ -2,7 +2,7 @@
 layout: ../layouts/Page.astro
 title: Dolby TrueHD and Atmos on Mac
 seoTitle: "Play Dolby TrueHD and Atmos on Mac: Lossless MKV Audio"
-description: "How to play Dolby TrueHD and Dolby Atmos audio from MKV files on a Mac: lossless 7.1 sound, what happens to Atmos, and why TrueHD can be silent."
+description: "How to play Dolby TrueHD and Dolby Atmos from MKV files on a Mac: lossless 7.1 sound, how TrueHD compares with Dolby Digital Plus, and why TrueHD can be silent."
 ---
 
 # How to play Dolby TrueHD and Atmos on a Mac
@@ -22,6 +22,26 @@ TrueHD is lossless: the sound Leah plays is the same, sample for sample, as the 
 ## About Dolby Atmos
 
 A TrueHD track with Atmos carries a full 7.1 mix, plus extra information that places sounds above you. Leah plays the 7.1 mix. The overhead sounds are mixed into its channels, so you still hear them, from the 7.1 speakers instead of from above.
+
+## Dolby TrueHD vs Dolby Digital Plus vs Atmos
+
+TrueHD and Dolby Digital Plus are both Dolby sound formats, and either can carry Atmos. The difference is that TrueHD is lossless and Dolby Digital Plus is compressed, which is why Blu-ray discs use TrueHD and streaming services use Dolby Digital Plus.
+
+| | Dolby TrueHD | Dolby Digital Plus |
+|---|---|---|
+| Quality | Lossless: exactly the studio's sound | Lossy: compressed to save space |
+| Channels | Up to 7.1 on discs | Usually 5.1 or 7.1 |
+| Bit rate | Up to 18 Mbps | Usually 640 to 768 kbps when streamed |
+| Where you find it | Blu-ray and 4K Blu-ray discs, and MKV rips of them | Netflix, Disney+ and other streaming services, and as a second track on some discs |
+| With Atmos | Yes, on Blu-ray | Yes, how streaming services send Atmos |
+
+The older Dolby Digital is lossy too, and more compressed, with up to 5.1 channels at up to 640 kbps and no Atmos. It's the sound on DVDs and TV broadcasts, and often a second track on Blu-ray discs.
+
+**Atmos isn't a format of its own.** It's extra information that places sounds above you, carried inside a TrueHD or a Dolby Digital Plus track. A Blu-ray's "Dolby Atmos" track is a TrueHD track with Atmos, and a streaming service's is a Dolby Digital Plus track with Atmos.
+
+**Which sounds better?** TrueHD, because nothing is thrown away. The difference is clearest on a good surround system; on laptop speakers or headphones, Dolby Digital Plus at streaming bit rates sounds close. If an MKV file has both, the TrueHD track is the one to play.
+
+Leah plays all three: TrueHD in up to 7.1, TrueHD with Atmos as 7.1, and Dolby Digital and Dolby Digital Plus.
 
 ## Play a TrueHD track in Leah
 
