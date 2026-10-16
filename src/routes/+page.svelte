@@ -59,6 +59,12 @@
     srcset: `${url(`/images/shot-${name}-1000.webp`)} 1000w, ${url(`/images/shot-${name}.webp`)} 2000w`,
   });
 
+  /**
+   * Where the hero's demo plays: phones hide it, so they don't download it,
+   * and visitors who ask for less motion see its first frame instead.
+   */
+  const demoShown = "(min-width: 768px) and (prefers-reduced-motion: no-preference)";
+
   const seeking = [
     {
       title: "Timeline Preview",
@@ -149,20 +155,27 @@
       </svg>
     </div>
     <div class="relative mx-auto px-[15px] min-[576px]:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] min-[1200px]:max-w-[1140px]">
-      <div class="absolute top-[-24%] bottom-[-42%] hidden md:left-[60%] md:block lg:left-[45%] min-[1200px]:top-[-20%] min-[1200px]:bottom-[-36%]">
-        <!-- The picture is hidden on phones, so they get an empty image instead of downloading it. -->
-        <picture>
-          <source media="(max-width: 767.98px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
-          <img
-            {...shot("hero")}
-            sizes="830px"
-            width="2000"
-            height="1255"
-            fetchpriority="high"
-            alt="Leah playing a video, with the timeline and volume controls showing"
-            class="h-full w-auto max-w-none"
-          />
-        </picture>
+      <!--
+        The demo is shown whole: it fills the old picture's height, unless
+        that would take it past 32px from the window's right edge, where it
+        shrinks to fit.
+      -->
+      <div class="absolute top-[-24%] right-[calc(50%-50vw+32px)] bottom-[-42%] hidden items-center @container-[size] md:left-[60%] md:flex lg:left-[45%] min-[1200px]:top-[-20%] min-[1200px]:bottom-[-36%]">
+        <!-- AV1 where the Mac or browser decodes it, else VP9, both at 60 fps. -->
+        <video
+          poster={url("/images/demo-poster.webp")}
+          width="1600"
+          height="900"
+          autoplay
+          muted
+          loop
+          playsinline
+          aria-label="Leah opening a video, skipping through it with the timeline preview, and playing it full screen"
+          class="aspect-video h-auto w-[min(100cqw,100cqh*16/9)] max-w-none rounded-[12px] shadow-[0_24px_64px_rgba(0,0,0,0.22)]"
+        >
+          <source media={demoShown} src={url("/images/demo-av1.webm")} type={'video/webm; codecs="av01.0.09M.08"'} />
+          <source media={demoShown} src={url("/images/demo-vp9.webm")} type={'video/webm; codecs="vp9"'} />
+        </video>
       </div>
       <h1 class="m-0 font-serif leading-[1.2] font-medium">
         <span class="block text-[length:calc(var(--r)*4)] leading-[1.2] font-normal tracking-[calc(var(--r)*0.1)]">Leah</span>{" "}
